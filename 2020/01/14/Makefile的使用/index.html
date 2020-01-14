@@ -7,18 +7,19 @@
   
   
   
-  <title>Linux_bash | Ning</title>
+  <title>Makefile的使用 | Ning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="shell基本命令    语法格式 command [-p] arg1 arg2 … 命令名称   选项    参数  注意：     1.命令名称一定不能少，选项和参数是可有可无的     2.多条命令用分号隔开（；）     3.跨行输入命令后面加反斜杠\    （要保证命令的正确性，特别是空格）vim passwd    用户：密码：ID：组ID：工作目录:bash adduser delu">
+  <meta name="description" content="Makefile本文来自转载，仅转载部分基础内容 1.makefile是什么?在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux_bash">
-<meta property="og:url" content="http://yoursite.com/2020/01/13/Linux_bash/index.html">
+<meta property="og:title" content="Makefile的使用">
+<meta property="og:url" content="http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Ning">
-<meta property="og:description" content="shell基本命令    语法格式 command [-p] arg1 arg2 … 命令名称   选项    参数  注意：     1.命令名称一定不能少，选项和参数是可有可无的     2.多条命令用分号隔开（；）     3.跨行输入命令后面加反斜杠\    （要保证命令的正确性，特别是空格）vim passwd    用户：密码：ID：组ID：工作目录:bash adduser delu">
+<meta property="og:description" content="Makefile本文来自转载，仅转载部分基础内容 1.makefile是什么?在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-13T04:31:58.000Z">
-<meta property="article:modified_time" content="2020-01-14T14:29:56.381Z">
+<meta property="article:published_time" content="2020-01-14T01:54:46.000Z">
+<meta property="article:modified_time" content="2020-01-14T14:16:19.103Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Makefile">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Ning" type="application/atom+xml">
@@ -276,11 +277,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Linux_bash" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Makefile的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/13/Linux_bash/" class="article-date">
-      <time datetime="2020-01-13T04:31:58.000Z" itemprop="datePublished">2020-01-13</time>
+      <a  href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+      <time datetime="2020-01-14T01:54:46.000Z" itemprop="datePublished">2020-01-14</time>
 </a>
 
     </div>
@@ -294,7 +295,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux_bash
+      Makefile的使用
     </h1>
   
 
@@ -305,6 +306,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Makefile/" rel="tag">Makefile</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -312,69 +317,73 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>shell基本命令<br>    语法格式 command [-p] arg1 arg2 …</p>
-<pre><code>命令名称   选项    参数
+        <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p><font size=4 color=red face="仿宋">本文来自转载，仅转载部分基础内容</font></p>
+<h2 id="1-makefile是什么"><a href="#1-makefile是什么" class="headerlink" title="1.makefile是什么?"></a>1.makefile是什么?</h2><p>在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化编译”，一旦写好，只需要一个make命令，整个工程就能自动编译，极大地提高了软件的开发效率，make是一个命令工具，是一个解释makefile中指令的命令工具。</p>
+<hr>
+<h2 id="2-程序的编译和连接"><a href="#2-程序的编译和连接" class="headerlink" title="2.程序的编译和连接"></a>2.程序的编译和连接</h2><p>无论是c、c++，首先要把源文件编译成中间代码（汇编语言），在Windows下就是.obj文件，在UNIX下是.o文件，即Object File，这个动作叫做编译。然后把大量的Object File合成可执行文件，这个动作叫作链接(link)。</p>
+<p><font size=4>编译时：</font>编译器需要的是语法的正确，函数与变量的声明。对于后者通常是你需要告诉编译器头文件所在位置（头文件中应该只是声明，二定义应该放在C/C++文件中），只要所有的语法都正确，编译器就可以编译出中间目标文件。一般来讲每个源文件都对应于一个中间目标文件。</p>
+<p><font size=4>链接时：</font>主要是链接函数和全局变量，所以，我们可以使用这些中间目标文件（O文件或者是OBJ文件）来链接我们的应用程序。链接器并不管函数所在的源文件，只管函数中的目标文件（Object File），在大多数时候，由于源文件太多，编译生成的中间目标文件太多，二链接时需要明显地指出中间目标文件名，这对于编译时很不方便的，所以，我们要给中间目标文件打个包，在Windows这种叫<font color= red size=3>”库文件“</font>，也就是.lib文件，在UNIX下，是Archive File，也就是.a文件。</p>
+<hr>
+<h2 id="3-makefile介绍"><a href="#3-makefile介绍" class="headerlink" title="3.makefile介绍"></a>3.makefile介绍</h2><p>make命令执行时，需要一个Makefile文件，以告诉make命令需要怎么样的去编译和连接程序。</p>
+<hr>
+<h3 id="3-1make的规则运行如下"><a href="#3-1make的规则运行如下" class="headerlink" title="3.1make的规则运行如下"></a>3.1make的规则运行如下</h3><pre><code>  1.如果这个工程没有编译过，那么我们的所有C文件都要编译并被链接。
+2.如果这个工程的某几个C文件被修改，那么我们只编译被修改的C文件，并链接目标程序。
+3.如果这个工程的头文件被改变了，那么我们需要编译引用了这几个头文件的C文件，并链接目标程序。</code></pre><hr>
+<h3 id="3-2makefile的使用"><a href="#3-2makefile的使用" class="headerlink" title="3.2makefile的使用"></a>3.2makefile的使用</h3><p>Makefile的语法规则</p>
+<pre><code>target...:pererquisites...
+    command</code></pre><hr>
+<p> target也就是一个目标文件，可以是Object File，也可以是执行文件。还可以是一个标签（Label），对于标签这种特性，在后续的“伪目标”章节中会有叙述。</p>
+<p>prerequisites就是，要生成那个target所需要的文件或是目标。</p>
+<p>command也就是make需要执行的命令。（任意的Shell命令）<br>在使用Makefile时  只能使用Makefile或者makefile两个名字</p>
+<hr>
+<p>具体内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">work:hwork.o input.o output.o					//目标：依赖</span><br><span class="line">	gcc hwork.o input.o output.o -o work		//命令此处前面一定要有一个tab建</span><br><span class="line"></span><br><span class="line">hwork.o:hwork.c hwork.h</span><br><span class="line">	gcc -c hwork.c -o hwork.o					//汇编</span><br><span class="line">	</span><br><span class="line">input.o:input.c hwork.h</span><br><span class="line">	gcc -c input.c -o hwork.o</span><br><span class="line">	</span><br><span class="line">output.o:output.c hwork.h</span><br><span class="line">	gcc -c output.c -o output.o</span><br><span class="line">	</span><br><span class="line">clean:</span><br><span class="line">	rm *.o</span><br></pre></td></tr></table></figure>
+<p>写完后直接使用make命令</p>
+<hr>
+<p>如果一个工程有3个头文件，和8个C文件，我们为了完成前面所述的那三个规则，我们的Makefile应该是下面的这个样子的。<br>k</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">edit : main.o kbd.o command.o display.o \</span><br><span class="line"></span><br><span class="line">       insert.o search.o files.o utils.o</span><br><span class="line"></span><br><span class="line">       cc -o edit main.o kbd.o command.o display.o \</span><br><span class="line"></span><br><span class="line">       insert.o search.o files.o utils.o</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  	main.o : main.c defs.h</span><br><span class="line"></span><br><span class="line">       cc -c main.c</span><br><span class="line"></span><br><span class="line">  	kbd.o : kbd.c defs.h command.h</span><br><span class="line"></span><br><span class="line">       cc -c kbd.c</span><br><span class="line"></span><br><span class="line">   command.o : command.c defs.h command.h</span><br><span class="line"></span><br><span class="line">       cc -c command.c</span><br><span class="line"></span><br><span class="line">   display.o : display.c defs.h buffer.h</span><br><span class="line"></span><br><span class="line">   	cc -c display.c</span><br><span class="line"></span><br><span class="line">   insert.o : insert.c defs.h buffer.h</span><br><span class="line"></span><br><span class="line">       cc -c insert.c</span><br><span class="line"></span><br><span class="line">   search.o : search.c defs.h buffer.h</span><br><span class="line"></span><br><span class="line">       cc -c search.c</span><br><span class="line"></span><br><span class="line">   files.o : files.c defs.h buffer.h command.h</span><br><span class="line"></span><br><span class="line">       cc -c files.c</span><br><span class="line"></span><br><span class="line">   utils.o : utils.c defs.h</span><br><span class="line"></span><br><span class="line">       cc -c utils.c</span><br><span class="line"></span><br><span class="line">   clean :</span><br><span class="line"></span><br><span class="line">       rm edit main.o kbd.o command.o display.o \</span><br><span class="line"></span><br><span class="line">       insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure>
+<hr>
+<p>反斜杠（\）是换行符的意思。这样比较便于Makefile的易读。我们可以把这个内容保存在文件为“Makefile”或“makefile”的文件中，然后在该目录下直接输入命令“make”就可以生成执行文件edit。如果要删除执行文件和所有的中间目标文件，那么，只要简单地执行一下“make clean”就可以了。</p>
+<hr>
+<p>在这个makefile中，目标文件（target）包含：执行文件edit和中间目标文件（*.o），依赖文件（prerequisites）就是冒号后面的那些 .c 文件和 .h文件。每一个 .o 文件都有一组依赖文件，而这些 .o 文件又是执行文件 edit 的依赖文件。依赖关系的实质上就是说明了目标文件是由哪些文件生成的，换言之，目标文件是哪些文件更新的。</p>
+<hr>
+<p>在定义好依赖关系后，后续的那一行定义了如何生成目标文件的操作系统命令，一定要以一个Tab键作为开头。记住，make并不管命令是怎么工作的，他只管执行所定义的命令。make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。</p>
+<hr>
+<h3 id="1-4makefile中使用变量"><a href="#1-4makefile中使用变量" class="headerlink" title="1.4makefile中使用变量"></a>1.4makefile中使用变量</h3><p>在上面的例子中，先让我们看看edit的规则：</p>
+<pre><code>edit : main.o kbd.o command.o display.o \
+   insert.o search.o files.o utils.o
+   cc -o edit main.o kbd.o command.o display.o\
+   insert.o search.o files.o utils.o</code></pre><p>我们可以看到[.o]文件的字符串被重复了两次，如果我们的工程需要加入一个新的[.o]文件，那么我们需要在两个地方加（应该是三个地方，还有一个地方在clean中）。</p>
+<p>比如，我们声明一个变量，叫objects, OBJECTS, objs, OBJS, obj, 或是 OBJ，反正不管什么啦，只要能够表示obj文件就行了。我们在makefile一开始就这样定义：</p>
+<pre><code>objects = main.o kbd.o command.o display.o \
 
-注意：
-    1.命令名称一定不能少，选项和参数是可有可无的
-    2.多条命令用分号隔开（；）
-    3.跨行输入命令后面加反斜杠\    （要保证命令的正确性，特别是空格）</code></pre><p>vim passwd<br>    用户：密码：ID：组ID：工作目录:bash</p>
-<p>adduser</p>
-<p>deluser    不完全删除<br>    deluser –remove-home xxx   完全删除</p>
-<p>huiam<br>hsotname</p>
-<p>ls -li   显示当前文件信息，包括inode号</p>
-<p>cat 显示文件内容<br>    cat -n  加行号</p>
-<p>echo    输出<br>    echo “     ”    原样输出</p>
-<p>chmod    改变权限<br>    1.八进制 000~111  rwx<br>    2.ugo   a    +/-</p>
-<p>grep      在指定路径中查找指定内容<br>    “linux”  /etc/passwd </p>
-<p>ln  连接命令（实质上就是一种快捷方式，保留目标文件的地址）<br>    软连接（符号连接）：通过文件的路径建立链接<br>        ln -s target(目标文件名)  link_name(生成的文件名)    target最好使用绝对路径<br>    硬链接：通过文件的物理编号建立—-inode链接<br>        ln 文件名   hlink_name</p>
-<p>压缩打包<br>    归档：对文件进行整理打包(对文件的大小没有改变)<br>    tar(对文件进行压缩，文件大小有改变。)<br>        -c    建立新的打包文件<br>        -r    项打包文件末尾追加文件<br>        -x    从打包文件中解压出文件<br>        -o    将文件解开到标准输出<br>        -v    处理过程中输出相关信息<br>        -f    对普通文件操作<br>        -z    调用gzip来压缩打包文件，与”-x”联用时调用gzip完成压缩<br>        -j    调用bzip2来压缩打包文件，与”-x”联用时调用bzip2完成压缩<br>        -Z    调用compress来压缩打包文件，与”-x”联用时调用bzip2完成解压缩<br>        //什么方式压缩，什么方式解开        压缩包后面把后缀名带上</p>
-<pre><code>tar -czvf  目标文件    新文件名     //打包并压缩文件
-    在ubuntu18中目标文件与新文件名位置相反
+         insert.o search.o files.o utils.o</code></pre><p>于是，我们就可以很方便地在我们的makefile中以“$(objects)”的方式来使用这个变量了，于是我们的改良版makefile就变成下面这个样子：</p>
+<pre><code>objects = main.o kbd.o command.o display.o \
+    insert.osearch.o files.o utils.o 
+edit : $(objects)
+    cc -o edit $(objects)
+main.o : main.c defs.h
+    cc -c main.c
+kbd.o : kbd.c defs.h command.h
+    cc -c kbd.c
+command.o : command.c defs.h command.h
+    cc -c command.c
+display.o : display.c defs.h buffer.h
+    cc -c display.c
+insert.o : insert.c defs.h buffer.h
+    cc -c insert.c
+search.o : search.c defs.h buffer.h
+    cc -c search.c
+files.o : files.c defs.h buffer.h command.h
+    cc -c files.c
+utils.o : utils.c defs.h
+    cc -c utils.c
+clean :
+       rm edit $(objects)</code></pre><p>于是如果有新的 .o 文件加入，我们只需简单地修改一下 objects 变量就可以了。</p>
+<p><font size=4 color=green>当然makefile的使用不仅仅是这样，在这里我仅仅摘录了makefile的最基本的使用，如果想了解更多关于makefile的使用，请访问原作者：</font></p>
+<p>GUYUEZHICHENG<a href="https://blog.csdn.net/weixin_38391755/article/details/80380786" target="_blank" rel="noopener">Makefile(绝对教程)</a></p>
+<p>haoel<a href="https://blog.csdn.net/haoel/article/details/2886" target="_blank" rel="noopener">跟我一起写Makefile</a></p>
 
-tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊字符</p>
-<pre><code>1.通配符 
-     *   匹配任意长度的字符    file*
-     ？    匹配一个长度的字符     file?
-     [abcd]    匹配其中一个字符    fiel[abcd]
-     [ - ]     [a-z]    匹配a-z其中一个字符    file[a-z]
-     [^]     [^1-9]    匹配除了1-9中的字符    file[^1-9]
-
-
-2.管道   |    :连接作用，将第一个命令的输出作为第二个命令的输入，以此类推
-    cat /etc/passwd | grep &quot;bash&quot;
-
-
-3.wc
-    计算文件的行数、单词数、大小
-    计算目录下文件的个数
-
-4.ps    查看进程
-    ps -ef | grep &quot;bash&quot;    查看开了几个bash
-
-5.输入输出重定向
-    默认输出输出源：
-
-    输出
-        &gt;file_name        (只能输出正确)的将该文件重定向为输出源，新建模式
-            ll &gt;tmp1.txt
-        &gt;&gt;file_name        (只能输出正确的)在原有的文件中继续写入，没有则新建，追加模式
-        2&gt;file_name        错误信息的输出的源重定向，新建模式
-        2&gt;&gt;file_name        错误信息的输出的源定向，追加模式
-        &amp;&gt;file_name        (无论对错)只要是命令结果，都保存在file_name
-        &amp;&gt;&gt;file_name    (无论对错)只要是命令结果，都保存在file_name，追加模式
-
-    输入
-        &lt;file_name        
-
-        cat :直接cat，使用默认输入源（键盘）   输出源是当前屏幕
-        cat &gt;1.txt：输入源是默认的，输出源是1.txt
-        cat &lt;1.txt  &gt;2.txt :输入源是1.txt 输出源是2.txt
-
-
-
-命令置换：将一个命令的输出作为另一个命令的参数
-    ls `pwd` (esc下方的点)</code></pre>
       
     </div>
     
@@ -382,13 +391,13 @@ tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊�
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2020/01/13/Linux_bash/">Linux_bash</a></p>
+        <p><span>本文标题:</span><a  href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/">Makefile的使用</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 John Doe 的个人博客">John Doe</a></p>
-        <p><span>发布时间:</span>2020年01月13日 - 12时31分</p>
-        <p><span>最后更新:</span>2020年01月14日 - 22时29分</p>
+        <p><span>发布时间:</span>2020年01月14日 - 09时54分</p>
+        <p><span>最后更新:</span>2020年01月14日 - 22时16分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/01/13/Linux_bash/" title="Linux_bash">http://yoursite.com/2020/01/13/Linux_bash/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/01/13/Linux_bash/　　作者: John Doe" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Makefile的使用">http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/　　作者: John Doe" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -399,18 +408,18 @@ tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊�
 
 <nav id="article-nav">
   
-    <a  href="/2020/01/13/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2020/01/14/Gdb%E8%B0%83%E8%AF%95%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          结构体类型
+          Gdb调试器
         
       </div>
     </a>
   
   
-    <a  href="/2020/01/13/%E5%AE%8F%E5%AE%9A%E4%B9%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">宏定义</div>
+    <a  href="/2020/01/14/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">结构体学生信息</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -422,7 +431,7 @@ tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊�
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Makefile"><span class="toc-number">1.</span> <span class="toc-text">Makefile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-makefile是什么"><span class="toc-number">1.1.</span> <span class="toc-text">1.makefile是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-程序的编译和连接"><span class="toc-number">1.2.</span> <span class="toc-text">2.程序的编译和连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-makefile介绍"><span class="toc-number">1.3.</span> <span class="toc-text">3.makefile介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1make的规则运行如下"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1make的规则运行如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2makefile的使用"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2makefile的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4makefile中使用变量"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.4makefile中使用变量</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -495,13 +504,13 @@ tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊�
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2020/01/13/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B/" title="上一篇: 结构体类型">
+            <a  href="/2020/01/14/Gdb%E8%B0%83%E8%AF%95%E5%99%A8/" title="上一篇: Gdb调试器">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2020/01/13/%E5%AE%8F%E5%AE%9A%E4%B9%89/" title="下一篇: 宏定义">
+            <a  href="/2020/01/14/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF/" title="下一篇: 结构体学生信息">
                 <i class="fa fa-angle-right"></i>
             </a>
         
