@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Ning">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Ning">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Ning" type="application/atom+xml">
@@ -70,7 +70,7 @@
             
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/">John Doe</a></h1>
+          <h1 class="header-author"><a href="/">Ning</a></h1>
         </hgroup>
         
         
@@ -186,7 +186,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl github"  target="_blank" href="/txtasd321.github.com" title="github">github</a>
+                                <a class="fl github"  target="_blank" href="/www.txtasd321.github.com" title="github">github</a>
                             
                                 <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
                             
@@ -232,7 +232,7 @@
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">John Doe</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ning</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
@@ -242,7 +242,7 @@
                 
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">John Doe</a></h1>
+              <h1 class="header-author"><a href="/" title="回到主页">Ning</a></h1>
             </hgroup>
             
             <nav class="header-menu">
@@ -264,7 +264,7 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="github" target="_blank" href="/txtasd321.github.com" title="github">github</a>
+                        <a class="github" target="_blank" href="/www.txtasd321.github.com" title="github">github</a>
                     
                         <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
                     
@@ -306,12 +306,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="gdb的使用"><a href="#gdb的使用" class="headerlink" title="gdb的使用"></a>gdb的使用</h1><p>在linux程序调成中gdb是最常用的工具。</p>
-<p>关于gdb的说明可以在linux下直接 man gdb或者gdb –help。<br>gdb的目的主要是让你知道程序内部正在运行什么代码，或者是当程序崩溃的时候正在执行什么代码</p>
-<p>GDB主要可以做四种事情来帮助你找到bug：<br>1.启动你的程序，指定任意可以影响程序行为的参数。<br>2.让你的程序在指定的条件停住.<br>3.测试你的程序停止的时候发生了什么。<br>4.改变程序内部的变量，来改正程序的错误继续执行。</p>
-<p>首先安装gdb</p>
-<pre><code>sudo apt install gdb</code></pre><p>vim test.c<br>编译：gcc -g test.c -o test<br>运行 gdb test<br>参数如下：<br>编号|命令缩写|命令说明<br>-|-|-<br>1.|l|使用l来查看源码（一次查看10行）|<br>2.|设置断点    b|(breakpoint) main或者    b    行号<br>3.|info b    |查看断点信息<br>4.|del n(n为断点编号)|        删除断点<br>5.|q|按q退出<br>6.|r(run)    |在断点后跑起来<br>7.|n(next)|    继续执行(有子函数不进入，仅当一句话执行)<br>8.|p    |变量名        查看变量信息<br>9.|s(step)|    继续执行(有子函数，进入子函数)<br>10.|c|    调到下一个断点<br>11.|k    |终止正在调试的程序<br>12.|f|查看栈帧<br>13.|st|开始执行程序，在main函数的第一条语句前面停下来<br>14.|disp|跟踪查看某个变量，每次停下来都显示它的值</p>
-
+              <h1 id="gdb的使用"><a href="#gdb的使用" class="headerlink" title="gdb的使用"></a>gdb的使用</h1><p>在linux程序调成中gdb是最常用的工具。</p>
+<p>关于gdb的说明可以在linux下直接 man gdb或者gdb –help。</p>
+          
       
     </div>
     
@@ -324,6 +321,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gdb/" rel="tag">gdb</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/14/Gdb%E8%B0%83%E8%AF%95%E5%99%A8/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -372,73 +373,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p><font size=4 color=red face="仿宋">本文来自转载，仅转载部分基础内容</font></p>
-<h2 id="1-makefile是什么"><a href="#1-makefile是什么" class="headerlink" title="1.makefile是什么?"></a>1.makefile是什么?</h2><p>在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化编译”，一旦写好，只需要一个make命令，整个工程就能自动编译，极大地提高了软件的开发效率，make是一个命令工具，是一个解释makefile中指令的命令工具。</p>
-<hr>
-<h2 id="2-程序的编译和连接"><a href="#2-程序的编译和连接" class="headerlink" title="2.程序的编译和连接"></a>2.程序的编译和连接</h2><p>无论是c、c++，首先要把源文件编译成中间代码（汇编语言），在Windows下就是.obj文件，在UNIX下是.o文件，即Object File，这个动作叫做编译。然后把大量的Object File合成可执行文件，这个动作叫作链接(link)。</p>
-<p><font size=4>编译时：</font>编译器需要的是语法的正确，函数与变量的声明。对于后者通常是你需要告诉编译器头文件所在位置（头文件中应该只是声明，二定义应该放在C/C++文件中），只要所有的语法都正确，编译器就可以编译出中间目标文件。一般来讲每个源文件都对应于一个中间目标文件。</p>
-<p><font size=4>链接时：</font>主要是链接函数和全局变量，所以，我们可以使用这些中间目标文件（O文件或者是OBJ文件）来链接我们的应用程序。链接器并不管函数所在的源文件，只管函数中的目标文件（Object File），在大多数时候，由于源文件太多，编译生成的中间目标文件太多，二链接时需要明显地指出中间目标文件名，这对于编译时很不方便的，所以，我们要给中间目标文件打个包，在Windows这种叫<font color= red size=3>”库文件“</font>，也就是.lib文件，在UNIX下，是Archive File，也就是.a文件。</p>
-<hr>
-<h2 id="3-makefile介绍"><a href="#3-makefile介绍" class="headerlink" title="3.makefile介绍"></a>3.makefile介绍</h2><p>make命令执行时，需要一个Makefile文件，以告诉make命令需要怎么样的去编译和连接程序。</p>
-<hr>
-<h3 id="3-1make的规则运行如下"><a href="#3-1make的规则运行如下" class="headerlink" title="3.1make的规则运行如下"></a>3.1make的规则运行如下</h3><pre><code>  1.如果这个工程没有编译过，那么我们的所有C文件都要编译并被链接。
-2.如果这个工程的某几个C文件被修改，那么我们只编译被修改的C文件，并链接目标程序。
-3.如果这个工程的头文件被改变了，那么我们需要编译引用了这几个头文件的C文件，并链接目标程序。</code></pre><hr>
-<h3 id="3-2makefile的使用"><a href="#3-2makefile的使用" class="headerlink" title="3.2makefile的使用"></a>3.2makefile的使用</h3><p>Makefile的语法规则</p>
-<pre><code>target...:pererquisites...
-    command</code></pre><hr>
-<p> target也就是一个目标文件，可以是Object File，也可以是执行文件。还可以是一个标签（Label），对于标签这种特性，在后续的“伪目标”章节中会有叙述。</p>
-<p>prerequisites就是，要生成那个target所需要的文件或是目标。</p>
-<p>command也就是make需要执行的命令。（任意的Shell命令）<br>在使用Makefile时  只能使用Makefile或者makefile两个名字</p>
-<hr>
-<p>具体内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">work:hwork.o input.o output.o					//目标：依赖</span><br><span class="line">	gcc hwork.o input.o output.o -o work		//命令此处前面一定要有一个tab建</span><br><span class="line"></span><br><span class="line">hwork.o:hwork.c hwork.h</span><br><span class="line">	gcc -c hwork.c -o hwork.o					//汇编</span><br><span class="line">	</span><br><span class="line">input.o:input.c hwork.h</span><br><span class="line">	gcc -c input.c -o hwork.o</span><br><span class="line">	</span><br><span class="line">output.o:output.c hwork.h</span><br><span class="line">	gcc -c output.c -o output.o</span><br><span class="line">	</span><br><span class="line">clean:</span><br><span class="line">	rm *.o</span><br></pre></td></tr></table></figure>
-<p>写完后直接使用make命令</p>
-<hr>
-<p>如果一个工程有3个头文件，和8个C文件，我们为了完成前面所述的那三个规则，我们的Makefile应该是下面的这个样子的。<br>k</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">edit : main.o kbd.o command.o display.o \</span><br><span class="line"></span><br><span class="line">       insert.o search.o files.o utils.o</span><br><span class="line"></span><br><span class="line">       cc -o edit main.o kbd.o command.o display.o \</span><br><span class="line"></span><br><span class="line">       insert.o search.o files.o utils.o</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  	main.o : main.c defs.h</span><br><span class="line"></span><br><span class="line">       cc -c main.c</span><br><span class="line"></span><br><span class="line">  	kbd.o : kbd.c defs.h command.h</span><br><span class="line"></span><br><span class="line">       cc -c kbd.c</span><br><span class="line"></span><br><span class="line">   command.o : command.c defs.h command.h</span><br><span class="line"></span><br><span class="line">       cc -c command.c</span><br><span class="line"></span><br><span class="line">   display.o : display.c defs.h buffer.h</span><br><span class="line"></span><br><span class="line">   	cc -c display.c</span><br><span class="line"></span><br><span class="line">   insert.o : insert.c defs.h buffer.h</span><br><span class="line"></span><br><span class="line">       cc -c insert.c</span><br><span class="line"></span><br><span class="line">   search.o : search.c defs.h buffer.h</span><br><span class="line"></span><br><span class="line">       cc -c search.c</span><br><span class="line"></span><br><span class="line">   files.o : files.c defs.h buffer.h command.h</span><br><span class="line"></span><br><span class="line">       cc -c files.c</span><br><span class="line"></span><br><span class="line">   utils.o : utils.c defs.h</span><br><span class="line"></span><br><span class="line">       cc -c utils.c</span><br><span class="line"></span><br><span class="line">   clean :</span><br><span class="line"></span><br><span class="line">       rm edit main.o kbd.o command.o display.o \</span><br><span class="line"></span><br><span class="line">       insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure>
-<hr>
-<p>反斜杠（\）是换行符的意思。这样比较便于Makefile的易读。我们可以把这个内容保存在文件为“Makefile”或“makefile”的文件中，然后在该目录下直接输入命令“make”就可以生成执行文件edit。如果要删除执行文件和所有的中间目标文件，那么，只要简单地执行一下“make clean”就可以了。</p>
-<hr>
-<p>在这个makefile中，目标文件（target）包含：执行文件edit和中间目标文件（*.o），依赖文件（prerequisites）就是冒号后面的那些 .c 文件和 .h文件。每一个 .o 文件都有一组依赖文件，而这些 .o 文件又是执行文件 edit 的依赖文件。依赖关系的实质上就是说明了目标文件是由哪些文件生成的，换言之，目标文件是哪些文件更新的。</p>
-<hr>
-<p>在定义好依赖关系后，后续的那一行定义了如何生成目标文件的操作系统命令，一定要以一个Tab键作为开头。记住，make并不管命令是怎么工作的，他只管执行所定义的命令。make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。</p>
-<hr>
-<h3 id="1-4makefile中使用变量"><a href="#1-4makefile中使用变量" class="headerlink" title="1.4makefile中使用变量"></a>1.4makefile中使用变量</h3><p>在上面的例子中，先让我们看看edit的规则：</p>
-<pre><code>edit : main.o kbd.o command.o display.o \
-   insert.o search.o files.o utils.o
-   cc -o edit main.o kbd.o command.o display.o\
-   insert.o search.o files.o utils.o</code></pre><p>我们可以看到[.o]文件的字符串被重复了两次，如果我们的工程需要加入一个新的[.o]文件，那么我们需要在两个地方加（应该是三个地方，还有一个地方在clean中）。</p>
-<p>比如，我们声明一个变量，叫objects, OBJECTS, objs, OBJS, obj, 或是 OBJ，反正不管什么啦，只要能够表示obj文件就行了。我们在makefile一开始就这样定义：</p>
-<pre><code>objects = main.o kbd.o command.o display.o \
-
-         insert.o search.o files.o utils.o</code></pre><p>于是，我们就可以很方便地在我们的makefile中以“$(objects)”的方式来使用这个变量了，于是我们的改良版makefile就变成下面这个样子：</p>
-<pre><code>objects = main.o kbd.o command.o display.o \
-    insert.osearch.o files.o utils.o 
-edit : $(objects)
-    cc -o edit $(objects)
-main.o : main.c defs.h
-    cc -c main.c
-kbd.o : kbd.c defs.h command.h
-    cc -c kbd.c
-command.o : command.c defs.h command.h
-    cc -c command.c
-display.o : display.c defs.h buffer.h
-    cc -c display.c
-insert.o : insert.c defs.h buffer.h
-    cc -c insert.c
-search.o : search.c defs.h buffer.h
-    cc -c search.c
-files.o : files.c defs.h buffer.h command.h
-    cc -c files.c
-utils.o : utils.c defs.h
-    cc -c utils.c
-clean :
-       rm edit $(objects)</code></pre><p>于是如果有新的 .o 文件加入，我们只需简单地修改一下 objects 变量就可以了。</p>
-<p><font size=4 color=green>当然makefile的使用不仅仅是这样，在这里我仅仅摘录了makefile的最基本的使用，如果想了解更多关于makefile的使用，请访问原作者：</font></p>
-<p>GUYUEZHICHENG<a href="https://blog.csdn.net/weixin_38391755/article/details/80380786" target="_blank" rel="noopener">Makefile(绝对教程)</a></p>
-<p>haoel<a href="https://blog.csdn.net/haoel/article/details/2886" target="_blank" rel="noopener">跟我一起写Makefile</a></p>
-
+              <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p><font size=4 color=red face="仿宋">本文来自转载，仅转载部分基础内容</font></p>
+<h2 id="1-makefile是什么"><a href="#1-makefile是什么" class="headerlink" title="1.makefile是什么?"></a>1.makefile是什么?</h2>
+          
       
     </div>
     
@@ -451,6 +388,10 @@ clean :
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Makefile/" rel="tag">Makefile</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -499,11 +440,10 @@ clean :
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="用结构体定义并输入5个学生的信息并进行各种要求输出"><a href="#用结构体定义并输入5个学生的信息并进行各种要求输出" class="headerlink" title="用结构体定义并输入5个学生的信息并进行各种要求输出"></a>用结构体定义并输入5个学生的信息并进行各种要求输出</h2><hr>
+              <h2 id="用结构体定义并输入5个学生的信息并进行各种要求输出"><a href="#用结构体定义并输入5个学生的信息并进行各种要求输出" class="headerlink" title="用结构体定义并输入5个学生的信息并进行各种要求输出"></a>用结构体定义并输入5个学生的信息并进行各种要求输出</h2><hr>
 <p>使用方法：<br>    用结构体person定义学生信息<br>    用枚举OPTION进行switch中case的选择<br>    用动态申请malloc进行空间申请<br>    用指针指向空间首地址  </p>
 <hr>
-<p><font szie=5 color=red>代码仅供参考如有不对请指出</font></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">height</span>;</span><br><span class="line">	<span class="keyword">float</span> score[<span class="number">3</span>];  <span class="comment">//保存三门课的成绩</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> OPTION</span><br><span class="line">&#123;</span><br><span class="line">	ONE = <span class="number">1</span>,</span><br><span class="line">	TWO,</span><br><span class="line">	THREE,</span><br><span class="line">	FOUR,</span><br><span class="line">	FIVE,</span><br><span class="line">	SIX,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//子函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function">struct person * <span class="title">CalHmax</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function">struct person * <span class="title">CalSmax</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SortH</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SortS</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">person</span> * <span class="title">pMax</span> = <span class="title">NULL</span>;</span></span><br><span class="line">	<span class="comment">//动态申请内存空间保存5个结构体变量</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">p</span> = (<span class="title">struct</span> <span class="title">person</span> *)<span class="title">malloc</span>(<span class="title">sizeof</span>(<span class="title">struct</span> <span class="title">person</span>)*5);</span><span class="comment">//进行动态空间申请</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == p)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"malloc failed\n"</span>);<span class="comment">//若申请失败返回失败信息</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"1------------input\n"</span>);<span class="comment">//输入学生信息</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"2------------output\n"</span>);<span class="comment">//输出出信息</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"3------------CalHmax\n"</span>);<span class="comment">//输出学生中身高最高的</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"4------------CalSmax\n"</span>);<span class="comment">//处处学生中总分最高的</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"5------------HSort\n"</span>);<span class="comment">//按身高对学生进行排序（冒泡排序）</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"6------------Sort\n"</span>); <span class="comment">//按总分排序（冒泡排序）</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"-1------------input\n"</span>);</span><br><span class="line">		<span class="keyword">int</span> op;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"please choose:\n"</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;op);</span><br><span class="line">		<span class="keyword">if</span> (<span class="number">-1</span> == op)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">switch</span>(op)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> ONE:</span><br><span class="line">				input(p,<span class="number">5</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> TWO:</span><br><span class="line">				output(p,<span class="number">5</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> THREE:</span><br><span class="line">				pMax = CalHmax(p,<span class="number">5</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"身高最高的同学相关信息如下:\n"</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%s-%d-%.2f-%.2f-%.2f\n"</span>,pMax-&gt;name,pMax-&gt;<span class="built_in">height</span>,pMax-&gt;score[<span class="number">0</span>],pMax-&gt;score[<span class="number">1</span>],pMax-&gt;score[<span class="number">2</span>]);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> FOUR:</span><br><span class="line">				pMax = CalSmax(p,<span class="number">5</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"总分最高的同学相关信息如下:\n"</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%s-%d-%.2f-%.2f-%.2f\n"</span>,pMax-&gt;name,pMax-&gt;<span class="built_in">height</span>,pMax-&gt;score[<span class="number">0</span>],pMax-&gt;score[<span class="number">1</span>],pMax-&gt;score[<span class="number">2</span>]);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> FIVE:</span><br><span class="line">				SortH(p,<span class="number">5</span>);</span><br><span class="line">				output(p,<span class="number">5</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SIX:</span><br><span class="line">				SortS(p,<span class="number">5</span>);</span><br><span class="line">				output(p,<span class="number">5</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"choose error!\n"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(struct person * p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="built_in">size</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请输入名字、身高和三门课成绩:\n"</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s%d%f%f%f"</span>,p[i].name,&amp;p[i].<span class="built_in">height</span>,&amp;p[i].score[<span class="number">0</span>],&amp;p[i].score[<span class="number">1</span>],&amp;p[i].score[<span class="number">2</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"学生的姓名、身高和三门课成绩相关信息如下:\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s-%d-%.2f-%.2f-%.2f\n"</span>,p[i].name,p[i].<span class="built_in">height</span>,p[i].score[<span class="number">0</span>],p[i].score[<span class="number">1</span>],p[i].score[<span class="number">2</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">struct person *<span class="title">CalHmax</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pMax</span> = <span class="title">p</span>;</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; <span class="built_in">size</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		p++;</span><br><span class="line">		<span class="keyword">if</span>(pMax-&gt;<span class="built_in">height</span> &lt; p-&gt;<span class="built_in">height</span>)</span><br><span class="line">			pMax = p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pMax;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">struct person *<span class="title">CalSmax</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">person</span> *<span class="title">pMax</span> = <span class="title">p</span>;</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; <span class="built_in">size</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		p++;</span><br><span class="line">		<span class="keyword">if</span>(pMax-&gt;score[<span class="number">0</span>]+pMax-&gt;score[<span class="number">1</span>]+pMax-&gt;score[<span class="number">2</span>] &lt; p-&gt;score[<span class="number">0</span>]+p-&gt;score[<span class="number">1</span>]+p-&gt;score[<span class="number">2</span>])</span><br><span class="line">			pMax = p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pMax;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SortH</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">tmp</span>;</span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="built_in">size</span><span class="number">-1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; <span class="built_in">size</span><span class="number">-1</span>-i;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(p[j].<span class="built_in">height</span> &gt; p[j+<span class="number">1</span>].<span class="built_in">height</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				tmp = p[j];</span><br><span class="line">				p[j] =p[j+<span class="number">1</span>];</span><br><span class="line">				p[j+<span class="number">1</span>] = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SortS</span><span class="params">(struct person *p,<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">person</span> <span class="title">tmp</span>;</span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="built_in">size</span><span class="number">-1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; <span class="built_in">size</span><span class="number">-1</span>-i;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(p[j].score[<span class="number">0</span>]+p[j].score[<span class="number">1</span>]+p[j].score[<span class="number">2</span>] &gt; p[j+<span class="number">1</span>].score[<span class="number">0</span>]+p[j+<span class="number">1</span>].score[<span class="number">1</span>]+p[j+<span class="number">1</span>].score[<span class="number">2</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				tmp = p[j];</span><br><span class="line">				p[j] =p[j+<span class="number">1</span>];</span><br><span class="line">				p[j+<span class="number">1</span>] = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
       
     </div>
     
@@ -516,6 +456,10 @@ clean :
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93-%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF-%E5%8A%A8%E6%80%81%E7%94%B3%E8%AF%B7%E5%86%85%E5%AD%98-%E6%88%90%E7%BB%A9%E6%B1%82%E5%92%8C/" rel="tag">结构体 学生信息 动态申请内存 成绩求和</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/14/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -564,19 +508,9 @@ clean :
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="动态内存管理"><a href="#动态内存管理" class="headerlink" title="动态内存管理"></a>动态内存管理</h3><hr>
+              <h3 id="动态内存管理"><a href="#动态内存管理" class="headerlink" title="动态内存管理"></a>动态内存管理</h3><hr>
 <p>malloc：<br>    void <em>malloc(size_t size)<br>    char *p = (cahr *)malloc(szieof(char)</em>10);<br>    free</p>
-<pre><code>1.malloc不关心内存保存什么数据类型，只关心申请的大小
-2.在使用这片空间之前，一定要强制转换
-3.如果申请内存成功，malloc会返回这片连续内的首地址，失败返回NULL
-4.一定要显式释放这片内存    free()
-5.释放之后，把指针赋值为NULL，避免空悬指针
-6.只申请不释放，会造成内存泄漏
-7.不能重复释放这片内存</code></pre><hr>
-<p>申请内存空间</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *p;</span><br><span class="line">    p = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">10</span>);	<span class="comment">//p在栈区，10bytes在堆区,p指向堆区首地址</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">NULL</span> == p)</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"malloc failed\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"p = %p\n"</span>,p);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,p);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,p);</span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">char</span> * <span class="title">Getstring</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span> *q = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line">        <span class="built_in">strcpy</span>(q,<span class="string">"helloworld"</span>);</span><br><span class="line">        <span class="keyword">return</span> q; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> *p = Getstring();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,p);</span><br><span class="line">        <span class="built_in">free</span>(p);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
       
     </div>
     
@@ -585,6 +519,10 @@ clean :
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -633,7 +571,7 @@ clean :
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>shell变量<br>    shell是没有数据类型的</p>
+              <p>shell变量<br>    shell是没有数据类型的</p>
 <pre><code>1.用户自定义变量
     从右到左赋值，
     赋值运算两边不能有空格，
@@ -644,137 +582,8 @@ clean :
 2.位置变量(命令行的参数)
     $0    脚本文件名
     $1 ~ $9    命令行的第一个参数 ~ 第九个参数
-    ${10}    命令行的第十个参数
-
-3.预定义变量
-    $#    命令行参数的个数(不包含脚本文件名)
-    $@    所有的命令行参数
-    $*    所有的命令行参数
-    $?    上一行命令若果结果是0  代表执行成功     为1则失败
-
-4.环境变量
-    PATH        标准环境变量
-    HOME        查看HOME
-    SHELL        查看SHELL
-    HISTSIZE    历史命令的个数
-
-    env    export    两个变量都是查看环境变量
-
-    \        转移字符
-
-
-
-shell语句
-1.说明性语句    以 # 开头   #！/bin/bash
-2.功能性语句
-    1、read：从标准输入读一行赋给shell变量
-    read VAR1  VAR2  VAR3。。。
-    echo    $VAR1    $VAR2    $VAR3
-
-    expr 3 + 2 \* 6        算数运算
-
-    2、expr ( + - \* / \( \))    整数算数运算命令
-    read A
-    expr $A + 2 \* 6
-    NUM=`expr 6 + \( 5 \* 5 \)`
-    echo $NUM
-    echo `expr $NUM \* 6`     
-    注意：
-        乘号和小括号要加转移符
-        运算两边要留有空格
-        若果把算数的结果赋给变量要用命令置换
-    3、test     测试对象：整数    字符串    文件类型
-        整数测试
-        a -eq b     判断是否a是否等于b
-        a -ne b        判断是否a和b不相等
-        a -gt b        判断是否a大于b
-        a -lt b        判断是否a小于b
-        a -ge b      判断是否a大于等于b
-        a -le b        判断是否a小于等于b
-
-        测试字符串
-        s1 = s2        a等于b
-        s1 != s2    a不等于b
-        测试的时候两边要留有空格
-        test -z    s1  测试长度
-        文件类型
-            -    普通文件
-            d    文件夹
-            l    链接文件
-            c    字符设备文件
-            b    块设备文件
-            p    管道文件
-            s    套接字文件
-
-        文件类型测试
-            -d file_name 该文件是否是文件夹
-            -f file_name 该文件是否是普通文件
-            -S file_name 套接字文件
-            -L file_name 连接文件
-            -c file_name 字符快文件
-            -b file_anme 块文件
-            -p file_name 管道文件
-            -e file_name 文件是否存在
-3.结构性语句
-        1、条件语句
-            #双分支
-
-            if 表达式
-            then
-                命令表
-            else
-                xxx
-            fi
-
-            #多分支
-            if [   ]
-            then
-                xxx
-                xxx
-            elif [  ]
-            then
-                xxx
-                xxx
-            else
-                xxx
-                xxx
-            if
-
-
-            #嵌套
-            if [  ]
-            then
-                xxx
-                xxx
-            else
-                if [   ]
-                then
-                    xxx
-                    xxx
-                fi
-            fi
-
-
-        2、开关语句
-            case     .esca
-
-            模式中可用或(|) 来连续的判断
-            例如：
-                YES|yes|y|Y)
-
-            case   xxx  in
-                模式1)
-                    命令表1
-                    ;;————————》break
-                模式2)
-                    命令表2
-                    ;;
-
-                ......
-                *)——————default
-                    命令表
-                    ;;
-            esac</code></pre>
+    ${10}    命令行的第十个参数</code></pre>
+          
       
     </div>
     
@@ -783,6 +592,10 @@ shell语句
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/linux_shell_%E8%84%9A%E6%9C%AC%E6%B5%81%E7%A8%8B/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -831,40 +644,9 @@ shell语句
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="结构体类型"><a href="#结构体类型" class="headerlink" title="结构体类型"></a>结构体类型</h1><hr>
+              <h1 id="结构体类型"><a href="#结构体类型" class="headerlink" title="结构体类型"></a>结构体类型</h1><hr>
 <p>struct date<br>{<br>    int year;<br>    int month;<br>    int day;    //成员变量之间用分号隔开，成员变量之间数据类型可以相同也可以不同<br>}</p>
-<p>struct date 才是结构体数据类型，struct只是一个关键字，date只是结构体名，此时没有分配空间</p>
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;d2;	<span class="comment">//定义一个数据类型叫struct date</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">d1</span> = &#123;</span><span class="number">2020</span>， <span class="number">1</span>， <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="d1是一个局部变量，d2是一个全局变量"><a href="#d1是一个局部变量，d2是一个全局变量" class="headerlink" title="d1是一个局部变量，d2是一个全局变量"></a>d1是一个局部变量，d2是一个全局变量</h2><p>struct date d1 = {2020, 1, 13}<br>访问结构体成员变量名：<br>结构体变量名.成员名    d1.year        d1.month    d1.day</p>
-<h2 id="结构体变量之间是可以直接进行赋值的："><a href="#结构体变量之间是可以直接进行赋值的：" class="headerlink" title="结构体变量之间是可以直接进行赋值的："></a>结构体变量之间是可以直接进行赋值的：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如：d1 = d2</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">height</span>;</span><br><span class="line">&#125;per;</span><br><span class="line"></span><br><span class="line"><span class="comment">//typedef struct person per;	将struct person数据类型取个别名叫per</span></span><br><span class="line">per p1 = &#123;<span class="string">"zhangsan"</span>,<span class="number">176</span>&#125;;</span><br><span class="line">per p2;</span><br><span class="line"></span><br><span class="line">p2.name = <span class="string">"lisi"</span>;	<span class="comment">//error	地址常量</span></span><br><span class="line"><span class="built_in">strcpy</span>(p2.name,<span class="string">"lisiabcd"</span>,<span class="number">4</span>);</span><br><span class="line">    <span class="comment">//memset(p2.anem,0,sizeof(p2.name));</span></span><br><span class="line">    <span class="comment">//memcpy(p2.name,"lisiabcd",4);	//拷贝字符串“lisiabcd”中4个字节到p2.name这个字符中</span></span><br><span class="line">p2.name[<span class="number">0</span>] = <span class="string">"L"</span>;	访问name驻足中的第一个元素</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s-%d\n"</span>,p1.name,p1.<span class="built_in">height</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s-%d\n"</span>,p2.name,p2.<span class="built_in">height</span>);</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="1、无名结构体：结构体名"><a href="#1、无名结构体：结构体名" class="headerlink" title="1、无名结构体：结构体名"></a>1、无名结构体：结构体名</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">int</span> day;</span><br><span class="line">&#125;b1 = &#123;<span class="number">1999</span>,<span class="number">10</span>,<span class="number">5</span>&#125;;	<span class="comment">//b1是一个全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">int</span> day;</span><br><span class="line">&#125;bir;</span><br><span class="line">bir b2 = &#123;<span class="number">2000</span>,<span class="number">5</span>,<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">person</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">char</span> sex;</span><br><span class="line">	bir b1;</span><br><span class="line">&#125;per;</span><br><span class="line"></span><br><span class="line">per p1 = &#123;<span class="string">"zhangsan"</span>,<span class="string">'M'</span>,&#123;<span class="number">19987</span>,<span class="number">4</span>,<span class="number">8</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">       <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">           <span class="keyword">int</span> year；</span><br><span class="line">           <span class="keyword">int</span> month；</span><br><span class="line">           <span class="keyword">int</span> day；</span><br><span class="line">       &#125;b1；</span><br><span class="line">&#125;per；</span><br><span class="line"><span class="built_in">printf</span>（<span class="string">"%s-%c-%d-%d-d\n"</span>，p1.name，p1.sex.p1.b1.year，p1.b1.month，p1.b1.day）；<span class="comment">//结构体嵌套一定要一级一级访问直到访问到最低级元素</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2、结构体指针"><a href="#2、结构体指针" class="headerlink" title="2、结构体指针"></a>2、结构体指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">person</span>&#123;</span></span><br><span class="line">   	<span class="keyword">char</span> name[<span class="number">20</span>]；</span><br><span class="line">   	<span class="keyword">char</span> sex；</span><br><span class="line">   	<span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">       	<span class="keyword">int</span> year；</span><br><span class="line">       	<span class="keyword">int</span> month；</span><br><span class="line">       	<span class="keyword">int</span> day；</span><br><span class="line">   	&#125;b1；</span><br><span class="line">&#125;per；</span><br><span class="line">per p1=&#123;<span class="string">"zhangsan"</span>，<span class="string">'M'</span>，&#123;<span class="number">1987</span>，<span class="number">4</span>，<span class="number">8</span>）&#125;；</span><br><span class="line"><span class="comment">//定义一个指针指向结构体变量p1</span></span><br><span class="line">   per*pper=&amp;p1；<span class="comment">//pper=&amp;p1*pper=p1</span></span><br><span class="line">   <span class="built_in">printf</span>（<span class="string">"%s-%c-%d-%d-%d\n"</span>，p1.name，p1.sex，p1.b1.year，p1.b1.month，p1.b1.day）；</span><br><span class="line">   通过指针访问结构体成员：</span><br><span class="line">   指针名-&gt;成员变量名</span><br><span class="line">   <span class="built_in">printf</span>（<span class="string">"%s-%c-%d-%d-%d\n"</span>，（*pper）.name，（*pper）.sex，（*pper）.b1.year，（*pper）.b1.month，（*pper）.b1.day）；<span class="comment">//.的优先级比高，所以*pper要加上小括号</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="3、结构体数组"><a href="#3、结构体数组" class="headerlink" title="3、结构体数组"></a>3、结构体数组</h2><p>通过指针访问结构体成员<br>指针名-&gt;成员变量名</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">person</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">height</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">        <span class="keyword">int</span> year;</span><br><span class="line">        <span class="keyword">int</span> month;</span><br><span class="line">        <span class="keyword">int</span> day;</span><br><span class="line">    &#125;b1;	<span class="comment">//b1是一个结构体变量</span></span><br><span class="line">&#125;per;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//定义一个结构体数组arr,长度为5</span></span><br><span class="line">    per arr[<span class="number">5</span>] = &#123;&#123;<span class="string">"a"</span>,<span class="number">150</span>,&#123;<span class="number">1997</span>,<span class="number">7</span>,<span class="number">5</span>&#125;&#125;,&#123;<span class="string">"b"</span>,<span class="number">155</span>,&#123;<span class="number">1993</span>,<span class="number">8</span>,<span class="number">5</span>&#125;&#125;,&#123;<span class="string">"c"</span>,<span class="number">160</span>,&#123;<span class="number">1995</span>,<span class="number">9</span>,<span class="number">5</span>&#125;&#125;,&#123;<span class="string">"d"</span>,<span class="number">165</span>,&#123;<span class="number">1999</span>,<span class="number">10</span>,<span class="number">5</span>&#125;&#125;,&#123;<span class="string">"e"</span>,<span class="number">170</span>,&#123;<span class="number">1997</span>,<span class="number">11</span>,<span class="number">5</span>&#125;&#125;&#125;;</span><br><span class="line">    per *pper = arr;	<span class="comment">//&amp;arr[0];</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s-%d-%d-%d-%d\n"</span>,pper[i].name,pper[i].<span class="built_in">height</span>,pper[i].b1.year,pper[i].b1.month,pper[i].b1.day);</span><br><span class="line">    <span class="comment">//printf("%s-%d-%d-%d-%d\n",(*(pper+i)).name,(*(pper+i)).height,(*(pper+i)).b1.year,(*(pper+i)).b1.month,(*(pper+i)).b1.day);</span></span><br><span class="line">    <span class="comment">//printf("%s-%d-%d-%d-%d\n",(*pper).name,(*pper).height,(*pper).b1.year,(*pper).b1.month,(*pper).b1.day);</span></span><br><span class="line">    <span class="comment">//pper++;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s-%d-%d-%d-%d\n"</span>,(pper-&gt;name,pper-&gt;<span class="built_in">height</span>,pper-&gt;b1.year,pper-&gt;b1.month,pper-&gt;b1.day));</span><br><span class="line">    pper++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4、字节对齐（32os)<br>    系统会一次性分配4个字节<br>    double一次性分配4个字节，分两次分配</p>
-<p>5、共同体</p>
-<p>==注意==<br>    1.所有成员变量的首地址一致<br>    2.共同体变量的内存空间取决于成员内存最大的成员<br>    3.耨遗失可，只能取出一个变量来</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> uu</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">	<span class="keyword">float</span> c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">union</span> uu u1;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="keyword">sizeof</span>(u1));	<span class="comment">//结果为4</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>6、判断计算机大小端序<br>大端序：低地址存高数据<br>小端序：高地址存高数据</p>
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">union</span> uu&#123;</span><br><span class="line">		<span class="keyword">char</span> a;</span><br><span class="line">		<span class="keyword">int</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">union</span> uu u1;</span><br><span class="line">	u1.b = <span class="number">0x123456789</span>;</span><br><span class="line">	<span class="keyword">if</span>(u1.a = <span class="number">0x12</span>)</span><br><span class="line">		<span class="built_in">printf</span>(%<span class="string">"big\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"small\n"</span>);</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>7、枚举</p>
-<p>给成员赋值时只能赋值为整形数<br>一旦成员的值确定，就不能再进行赋值<br>如果不给第一个初始化，默认值为0，后面的每个值加1</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> result</span><br><span class="line">&#123;</span><br><span class="line">	FALSE,</span><br><span class="line">	TRUE,	<span class="comment">//用逗号隔开</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> WEEK&#123;</span><br><span class="line">	MONDAY,		<span class="comment">//0</span></span><br><span class="line">	TUESDAY,	<span class="comment">//1</span></span><br><span class="line">	WEDNESDAY = <span class="number">-1</span>,		<span class="comment">//-1</span></span><br><span class="line">	THURSDAY,	<span class="comment">//0</span></span><br><span class="line">	FRIDAY,		<span class="comment">//1</span></span><br><span class="line">	SATURDAY = <span class="number">0</span>,	<span class="comment">//0</span></span><br><span class="line">	SUNDAY,		<span class="comment">//1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
       
     </div>
     
@@ -873,6 +655,10 @@ shell语句
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -921,69 +707,9 @@ shell语句
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>shell基本命令<br>    语法格式 command [-p] arg1 arg2 …</p>
-<pre><code>命令名称   选项    参数
-
-注意：
-    1.命令名称一定不能少，选项和参数是可有可无的
-    2.多条命令用分号隔开（；）
-    3.跨行输入命令后面加反斜杠\    （要保证命令的正确性，特别是空格）</code></pre><p>vim passwd<br>    用户：密码：ID：组ID：工作目录:bash</p>
-<p>adduser</p>
-<p>deluser    不完全删除<br>    deluser –remove-home xxx   完全删除</p>
-<p>huiam<br>hsotname</p>
-<p>ls -li   显示当前文件信息，包括inode号</p>
-<p>cat 显示文件内容<br>    cat -n  加行号</p>
-<p>echo    输出<br>    echo “     ”    原样输出</p>
-<p>chmod    改变权限<br>    1.八进制 000~111  rwx<br>    2.ugo   a    +/-</p>
-<p>grep      在指定路径中查找指定内容<br>    “linux”  /etc/passwd </p>
-<p>ln  连接命令（实质上就是一种快捷方式，保留目标文件的地址）<br>    软连接（符号连接）：通过文件的路径建立链接<br>        ln -s target(目标文件名)  link_name(生成的文件名)    target最好使用绝对路径<br>    硬链接：通过文件的物理编号建立—-inode链接<br>        ln 文件名   hlink_name</p>
-<p>压缩打包<br>    归档：对文件进行整理打包(对文件的大小没有改变)<br>    tar(对文件进行压缩，文件大小有改变。)<br>        -c    建立新的打包文件<br>        -r    项打包文件末尾追加文件<br>        -x    从打包文件中解压出文件<br>        -o    将文件解开到标准输出<br>        -v    处理过程中输出相关信息<br>        -f    对普通文件操作<br>        -z    调用gzip来压缩打包文件，与”-x”联用时调用gzip完成压缩<br>        -j    调用bzip2来压缩打包文件，与”-x”联用时调用bzip2完成压缩<br>        -Z    调用compress来压缩打包文件，与”-x”联用时调用bzip2完成解压缩<br>        //什么方式压缩，什么方式解开        压缩包后面把后缀名带上</p>
-<pre><code>tar -czvf  目标文件    新文件名     //打包并压缩文件
-    在ubuntu18中目标文件与新文件名位置相反
-
-tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊字符</p>
-<pre><code>1.通配符 
-     *   匹配任意长度的字符    file*
-     ？    匹配一个长度的字符     file?
-     [abcd]    匹配其中一个字符    fiel[abcd]
-     [ - ]     [a-z]    匹配a-z其中一个字符    file[a-z]
-     [^]     [^1-9]    匹配除了1-9中的字符    file[^1-9]
-
-
-2.管道   |    :连接作用，将第一个命令的输出作为第二个命令的输入，以此类推
-    cat /etc/passwd | grep &quot;bash&quot;
-
-
-3.wc
-    计算文件的行数、单词数、大小
-    计算目录下文件的个数
-
-4.ps    查看进程
-    ps -ef | grep &quot;bash&quot;    查看开了几个bash
-
-5.输入输出重定向
-    默认输出输出源：
-
-    输出
-        &gt;file_name        (只能输出正确)的将该文件重定向为输出源，新建模式
-            ll &gt;tmp1.txt
-        &gt;&gt;file_name        (只能输出正确的)在原有的文件中继续写入，没有则新建，追加模式
-        2&gt;file_name        错误信息的输出的源重定向，新建模式
-        2&gt;&gt;file_name        错误信息的输出的源定向，追加模式
-        &amp;&gt;file_name        (无论对错)只要是命令结果，都保存在file_name
-        &amp;&gt;&gt;file_name    (无论对错)只要是命令结果，都保存在file_name，追加模式
-
-    输入
-        &lt;file_name        
-
-        cat :直接cat，使用默认输入源（键盘）   输出源是当前屏幕
-        cat &gt;1.txt：输入源是默认的，输出源是1.txt
-        cat &lt;1.txt  &gt;2.txt :输入源是1.txt 输出源是2.txt
-
-
-
-命令置换：将一个命令的输出作为另一个命令的参数
-    ls `pwd` (esc下方的点)</code></pre>
+              <p>shell基本命令<br>    语法格式 command [-p] arg1 arg2 …</p>
+<pre><code>命令名称   选项    参数</code></pre>
+          
       
     </div>
     
@@ -992,6 +718,10 @@ tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊�
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/Linux_bash/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1040,29 +770,13 @@ tar -xjvf  目标文件        //解压文件</code></pre><p>shell中的特殊�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="宏在编译的时候进行预处理不会占用时间"><a href="#宏在编译的时候进行预处理不会占用时间" class="headerlink" title="宏在编译的时候进行预处理不会占用时间"></a>宏在编译的时候进行预处理不会占用时间</h3><h3 id="宏和const区别：都是修饰常量；宏是在预处理阶段进行的"><a href="#宏和const区别：都是修饰常量；宏是在预处理阶段进行的" class="headerlink" title="宏和const区别：都是修饰常量；宏是在预处理阶段进行的"></a>宏和const区别：都是修饰常量；宏是在预处理阶段进行的</h3><pre><code>(1) 编译器处理方式不同
+              <h3 id="宏在编译的时候进行预处理不会占用时间"><a href="#宏在编译的时候进行预处理不会占用时间" class="headerlink" title="宏在编译的时候进行预处理不会占用时间"></a>宏在编译的时候进行预处理不会占用时间</h3><h3 id="宏和const区别：都是修饰常量；宏是在预处理阶段进行的"><a href="#宏和const区别：都是修饰常量；宏是在预处理阶段进行的" class="headerlink" title="宏和const区别：都是修饰常量；宏是在预处理阶段进行的"></a>宏和const区别：都是修饰常量；宏是在预处理阶段进行的</h3><pre><code>(1) 编译器处理方式不同
     define宏是在预处理阶段展开。
     const常量是编译运行阶段使用。
 (2) 类型和安全检查不同
     define宏没有类型，不做任何类型检查，仅仅是展开。
-    const常量有具体的类型，在编译阶段会执行类型检查。
-(3) 存储方式不同
-    define宏仅仅是展开，有多少地方使用，就展开多少次，不会分配内存。
-    const常量会在内存中分配(可以是堆中也可以是栈中)。
-(4)const 可以节省空间，避免不必要的内存分配。 例如：
-    #define PI 3.14159 //常量宏
-    const doulbe Pi=3.14159; //此时并未将Pi放入ROM中 ......
-    double i=Pi; //此时为Pi分配内存，以后不再分配！
-    double I=PI; //编译期间进行宏替换，分配内存
-    double j=Pi; //没有内存分配
-    double J=PI; //再进行宏替换，又一次分配内存！
-    const定义常量从汇编的角度来看，只是给出了对应的内存地址，而不是象#define一样给出的是立即数，所以，const定义的常量在程序运行过程中只有一份拷贝，而 #define定义的常量在内存中有若干个拷贝。
-(5) 提高了效率。 编译器通常不为普通const常量分配存储空间，而是将它们保存在符号表中，这使得它成为一个编译期间的常量，没有了存储与读内存的操作，使得它的效率也很高。
-const 与 #define的比较</code></pre><h4 id="C-语言可以用const来定义常量，也可以用-define来定义常量。但是前者比后者有更多的优点："><a href="#C-语言可以用const来定义常量，也可以用-define来定义常量。但是前者比后者有更多的优点：" class="headerlink" title="C++ 语言可以用const来定义常量，也可以用 #define来定义常量。但是前者比后者有更多的优点："></a>C++ 语言可以用const来定义常量，也可以用 #define来定义常量。但是前者比后者有更多的优点：</h4><pre><code>（1） const常量有数据类型，而宏常量没有数据类型。编译器可以对前者进行类型安全检查。而对后者只进行字符替换，没有类型安全检查，并且在字符替换可能会产生意料不到的错误（边际效应）。
-（2） 有些集成化的调试工具可以对const常量进行调试，但是不能对宏常量进行调试。
-l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，即const常量完全取代宏常量。
-
-栈区相当于临时工，生命周期为函数内</code></pre>
+    const常量有具体的类型，在编译阶段会执行类型检查。</code></pre>
+          
       
     </div>
     
@@ -1071,6 +785,10 @@ l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，�
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/%E5%AE%8F%E5%AE%9A%E4%B9%89/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1119,92 +837,8 @@ l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1、指针的定义<br>    数据类型 * 指针名</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>, *p = &amp;a;</span><br><span class="line"></span><br><span class="line">裸机编程</span><br><span class="line"><span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> *p = (<span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> *)<span class="number">0x123456</span>;  ------&gt;访问寄存器</span><br><span class="line"></span><br><span class="line">野指针：可以访问，不能修改</span><br><span class="line">空指针：不能访问也不能修改	<span class="literal">NULL</span></span><br><span class="line"></span><br><span class="line">&amp;*a	<span class="comment">//错误</span></span><br><span class="line">*&amp;a	<span class="comment">//抵消</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">100</span>]</span><br><span class="line">arr[<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
-<hr>
-<p>2、指针的运算（地址的运算）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">p+n;	<span class="keyword">sizeof</span>(数据类型)*n</span><br><span class="line">p-n;	同上</span><br><span class="line">p++;</span><br><span class="line">++p;</span><br><span class="line"></span><br><span class="line">p*q;	<span class="built_in">strlen</span>()</span><br><span class="line">p&lt;q;	字符翻转</span><br><span class="line"></span><br><span class="line">&lt;code&gt;</span><br><span class="line"><span class="keyword">char</span> ch = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">char</span> *p = &amp;ch;</span><br><span class="line">p = &amp;ch = <span class="number">0x100</span>;</span><br><span class="line">*p = <span class="string">'a'</span></span><br><span class="line">*p+<span class="number">1</span> = <span class="string">'a'</span>+<span class="number">1</span> = <span class="string">'b'</span>;</span><br><span class="line">*(p+<span class="number">1</span>) = ?  <span class="comment">//随机值</span></span><br><span class="line"></span><br><span class="line">*p++ = *(p++) = *&amp; ch = <span class="string">'a'</span>	<span class="comment">//p指向了下一个地址 (0x100)</span></span><br><span class="line">*++p = *(++p) = ?	<span class="comment">//*(0x101)</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>3、指针与数组</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="comment">//定义一个指针指向数组首元素		arr[0]---&gt;int</span></span><br><span class="line"><span class="keyword">int</span> *p = arr = &amp;arr[<span class="number">0</span>];</span><br><span class="line">p + <span class="number">1</span> = %arr[<span class="number">0</span>] + <span class="number">1</span> = &amp;arr[<span class="number">1</span>] = arr + <span class="number">1</span></span><br><span class="line">*(p+<span class="number">1</span>) = arr[<span class="number">1</span>] = <span class="number">10</span> = *(arr + <span class="number">1</span>) = p[<span class="number">1</span>]</span><br><span class="line">*p + <span class="number">1</span> = <span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span></span><br><span class="line">*(p + i) == *(arr + i) == p[i] = arr[i]</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数功能：子函数实现arr元素输出</span></span><br><span class="line"><span class="comment">//函数参数：数组的首地址	数组的长度</span></span><br><span class="line"><span class="comment">//函数返回值：无</span></span><br><span class="line"><span class="comment">//函数形参如果是数组的形式那么实质上就是一个指针</span></span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> output(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len);</span><br><span class="line"><span class="comment">//void output(int arr[5], int len);	//sizeof(arr) = 4</span></span><br><span class="line"><span class="comment">//void output(int arr[], int len);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个指针指向数组第二个元素	arr[1] -----&gt;int</span></span><br><span class="line"><span class="keyword">int</span> *p = &amp;arr[<span class="number">1</span>] = &amp;arr[<span class="number">0</span>] + <span class="number">1</span> = arr + <span class="number">1</span></span><br><span class="line">p[<span class="number">-1</span>] = *(p<span class="number">-1</span>) = *&amp;arr[<span class="number">0</span>] = arr[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">p[<span class="number">0</span>] = *p = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个指针指向数组	arr-----&gt;int [5]</span></span><br><span class="line"><span class="keyword">int</span> (*p)[<span class="number">5</span>] = &amp;arr;</span><br><span class="line">p = &amp;arr;</span><br><span class="line">&amp;arr[<span class="number">0</span>] = <span class="number">0x100</span></span><br><span class="line">p + <span class="number">1</span> = <span class="number">0x114</span>	<span class="comment">//访问的非法地址</span></span><br><span class="line">*p = arr = &amp;arr[<span class="number">0</span>];</span><br><span class="line">**p = arr[<span class="number">0</span>];</span><br><span class="line">*(*p+<span class="number">1</span>) = *(&amp;arr[<span class="number">0</span>]+<span class="number">1</span>) = *(&amp;arr[<span class="number">1</span>]) = arr[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-<hr>
-<p>4、指针与二维数组</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>][<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>&#125;;</span><br><span class="line"><span class="comment">//arr[0]~arr[2]:arr的三个元素，也是三个以为数组的数组名</span></span><br><span class="line"><span class="comment">//arr[0][0]~arr[2][3]:int</span></span><br><span class="line"><span class="comment">//定义一一个指针指向相互组里面第一个int元素    arr[0][0]</span></span><br><span class="line"><span class="keyword">int</span> *p = &amp;arr[<span class="number">0</span>][<span class="number">0</span>] = arr[<span class="number">0</span>]</span><br><span class="line">p+<span class="number">1</span> = &amp;arr[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">*(p+<span class="number">1</span>) = arr[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">......</span><br><span class="line">p+<span class="number">11</span> = arr[<span class="number">2</span>][<span class="number">3</span>]</span><br><span class="line">*(p+<span class="number">11</span>) = arr[<span class="number">2</span>][<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个指针指向数组的首元素    arr[0]-----&gt;int [4]</span></span><br><span class="line"><span class="keyword">int</span>(*p)[<span class="number">4</span>]=&amp;arr[<span class="number">0</span>]=arr</span><br><span class="line">p=&amp;arr[<span class="number">0</span>]=arr</span><br><span class="line">*p=arr[<span class="number">0</span>]=&amp;arr[<span class="number">0</span>][<span class="number">0</span>]=*arr=p[<span class="number">0</span>]</span><br><span class="line">**p=arr[<span class="number">0</span>][<span class="number">0</span>]=**arr=p[O][<span class="number">0</span>]=*p[<span class="number">0</span>]=(*arr)[<span class="number">0</span>]</span><br><span class="line">*&amp;arr[<span class="number">0</span>][<span class="number">1</span>]=&amp;ar[<span class="number">0</span>][<span class="number">0</span>]+<span class="number">1</span>=*(*p+<span class="number">1</span>)=*(*arr+<span class="number">1</span>)=p[<span class="number">0</span>][<span class="number">1</span>]=(p)[<span class="number">1</span>]=(*arr)[<span class="number">1</span>]       *arr[<span class="number">0</span>]=(&amp;arr[<span class="number">0</span>][<span class="number">0</span>])[<span class="number">0</span>] = <span class="number">1</span>    *(&amp;arr[<span class="number">0</span>][<span class="number">0</span>]+<span class="number">1</span>) = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>][<span class="number">2</span>]=*(*p+<span class="number">2</span>)=*(*arr+<span class="number">2</span>)=p[<span class="number">0</span>][<span class="number">2</span>]</span><br><span class="line">p+<span class="number">1</span>=&amp;arr[<span class="number">0</span>]+<span class="number">1</span>=&amp;arr[<span class="number">1</span>]</span><br><span class="line">*(p+<span class="number">1</span>)=arr[<span class="number">1</span>]=&amp;arr[<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">**(p+<span class="number">1</span>)=arr[<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">*&amp;arr[<span class="number">1</span>][<span class="number">1</span>]=&amp;arr[<span class="number">1</span>][<span class="number">0</span>]+<span class="number">1</span>=*(*(p+<span class="number">1</span>)+<span class="number">1</span>)=*(*(arr+<span class="number">1</span>)+<span class="number">1</span>)=p[<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">arr[<span class="number">1</span>][<span class="number">2</span>]=*(*(p+<span class="number">1</span>)+<span class="number">2</span>)=*(*(arr+<span class="number">1</span>)+<span class="number">2</span>)=p[<span class="number">1</span>][<span class="number">2</span>]</span><br><span class="line">p+<span class="number">2</span>=&amp;arr[<span class="number">0</span>]+<span class="number">2</span>=&amp;arr[<span class="number">2</span>]</span><br><span class="line">*(p+<span class="number">2</span>)=arr[<span class="number">2</span>]=&amp;arr[<span class="number">2</span>][<span class="number">0</span>]</span><br><span class="line">**(p+<span class="number">2</span>)=arr[<span class="number">2</span>][<span class="number">0</span>]</span><br><span class="line">arr[<span class="number">2</span>][<span class="number">1</span>]=*(*(p+<span class="number">2</span>)+<span class="number">1</span>)=*(*(arr+<span class="number">2</span>)+<span class="number">1</span>)=p[<span class="number">2</span>][<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<hr>
-<pre><code>int ints[20]    //起始地址为100</code></pre><table>
-<thead>
-<tr>
-<th>&amp;ints + 4 = 420</th>
-<th>代表对数组+4</th>
-<th>即100+20<em>4(+4的用处)</em>4(int 类型)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>***</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>5、指针数组</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>定义一个长度为3的数组，里面每个元素都是指向int的指针    //int *</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>数据类型   数组名[长度]</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * arr[<span class="number">3</span>] = &#123;&amp;a,&amp;b,&amp;b&#125;;      arr[<span class="number">0</span>] = <span class="number">0x100</span>   arr[<span class="number">1</span>] = <span class="number">0x200</span>     arr[<span class="number">2</span>] = <span class="number">0x300</span>  &amp;arr[<span class="number">0</span>] = <span class="number">0x100</span> = arr</span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line">*arr[<span class="number">0</span>] = *&amp;a = a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> a,b,c;<span class="comment">//0×1000x200 0x300</span></span><br><span class="line">*arr[<span class="number">0</span>]=*&amp;a=a=<span class="number">1</span></span><br><span class="line">*arr[<span class="number">1</span>]=*&amp;b=<span class="number">2</span>*arr[<span class="number">2</span>]=*&amp;c=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>**p=arr;</span><br><span class="line">p=arr=&amp;arr[<span class="number">0</span>]=<span class="number">0x1000</span></span><br><span class="line">*p=*(<span class="number">0x1000</span>)=arr[<span class="number">0</span>]=&amp;a=<span class="number">0x100</span></span><br><span class="line">**p=*(<span class="number">0x100</span>)=*(&amp;a)=a=**arr</span><br><span class="line"></span><br><span class="line">&amp;b=<span class="number">0x200</span>=arr[<span class="number">1</span>]=*(&amp;ar[<span class="number">1</span>])=*(&amp;arr[<span class="number">0</span>]+<span class="number">1</span>)=*(p+<span class="number">1</span>)</span><br><span class="line">b=**(p+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">*(*p+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> brr[<span class="number">3</span>][<span class="number">4</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>);</span><br><span class="line"><span class="keyword">int</span> *arr[<span class="number">3</span>]=&#123;brr[<span class="number">0</span>],brr[<span class="number">1</span>],brr[<span class="number">2</span>]&#125;;</span><br><span class="line"><span class="number">0</span></span><br><span class="line">&amp;brr[<span class="number">1</span>][<span class="number">2</span>]=&amp;brr[<span class="number">1</span>][<span class="number">0</span>]+<span class="number">2</span>=arr[<span class="number">1</span>]+<span class="number">2</span>=*(arr+<span class="number">1</span>)+<span class="number">2</span></span><br></pre></td></tr></table></figure></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>6、字符指针数组</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">5</span>][<span class="number">20</span>]=&#123;<span class="string">"hello"</span>，<span class="string">"world"</span>，<span class="string">"china"</span>，<span class="string">"xian"</span>，<span class="string">"baoji"</span>）；<span class="keyword">sizeof</span>（str）=<span class="number">100</span></span><br><span class="line"><span class="keyword">char</span>*pstr[<span class="number">20</span>]=&#123;<span class="string">"hello"</span>，<span class="string">"world"</span>，<span class="string">"china"</span>，<span class="string">"xian"</span>，<span class="string">"baoji"</span>）；<span class="keyword">sizeof</span>（pstr）=<span class="number">80</span><span class="string">"hello"</span><span class="number">0x100</span><span class="string">"world"</span><span class="number">0x200</span><span class="string">"china"</span><span class="number">0x300</span><span class="string">"xian"</span><span class="number">0x400</span><span class="string">"baoji"</span><span class="number">0x500</span></span><br><span class="line">pstr[<span class="number">0</span>]是一个字符指针，指向常量区的<span class="string">"hello"</span>，pstr[]的值是“hello”的首地址</span><br><span class="line">pstr[O]=<span class="number">0x100</span> pstr[<span class="number">1</span>]=<span class="number">0x200</span> pstr[<span class="number">2</span>]=<span class="number">0x300</span> pstr[<span class="number">3</span>]=<span class="number">0x400</span> pstr[<span class="number">4</span>]=<span class="number">0x500</span></span><br><span class="line">&amp;pstr[O]=<span class="number">0x1000</span>&amp;pstr[<span class="number">1</span>]=<span class="number">0x1004</span>&amp;pstr[<span class="number">2</span>]=<span class="number">0x1008</span>&amp;pstr[<span class="number">3</span>]=<span class="number">0</span>×<span class="number">100</span>c&amp;pstr[<span class="number">4</span>]=<span class="number">0x1010</span></span><br><span class="line"><span class="keyword">for</span>（inti=<span class="number">0</span>；i&lt;<span class="number">5</span>；i++）</span><br><span class="line"><span class="built_in">printf</span>（<span class="string">"%s\n"</span>，pstr[i]）；<span class="comment">//printf（"%s\n"，*（pstr+i））；&amp;pstr[0]+i</span></span><br><span class="line">*pstr[<span class="number">0</span>]=**pstr=**（<span class="number">0x1000</span>）=*&#123;<span class="number">0x100</span>）=‘h<span class="number">'</span></span><br><span class="line"><span class="string">'e'</span>=*（<span class="number">0x100</span>+<span class="number">1</span>）=**pStr+<span class="number">1</span>）</span><br></pre></td></tr></table></figure></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>—</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### 一维数组名《====》一级指针</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### 二维数组名《====》数组指针（行指针）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### 指针数组名《====》二级指针</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<hr>
-<p>7、函数指针  </p>
-<pre><code>函数返回值类型（*指针名）（形参列表）</code></pre><p><code>int（*p）（int，int）=add；//定义了一个指针指向了add函数 int（*）（int，int）</code></p>
-<pre><code>函数指针数组：
-//数据类型数组名[长度]</code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>（*arr[<span class="number">4</span>]）（<span class="keyword">int</span>，<span class="keyword">int</span>）=&#123;add，sub，mul，div）；</span><br><span class="line"><span class="comment">//arr是一个长度为4的数组，里面每个元素都是一个函数指针</span></span><br><span class="line"><span class="keyword">for</span>（i=<span class="number">0</span>；i&lt;<span class="number">4</span>；i++）&#123;</span><br><span class="line"><span class="built_in">printf</span>（<span class="string">"%d"</span>，arr[i]（<span class="number">3</span>，<span class="number">5</span>））；</span><br><span class="line"><span class="built_in">printf</span>（<span class="string">"%d"</span>，（*arr[i]）（<span class="number">3</span>，<span class="number">5</span>））；</span><br><span class="line"><span class="built_in">printf</span>（<span class="string">"%d"</span>，（*（arr+i）（<span class="number">3</span>，<span class="number">5</span>））；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+              <p>1、指针的定义<br>    数据类型 * 指针名</p>
+          
       
     </div>
     
@@ -1213,6 +847,10 @@ l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，�
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/%E6%8C%87%E9%92%88/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1261,20 +899,9 @@ l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+              <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+          
       
     </div>
     
@@ -1283,6 +910,10 @@ l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，�
       
 
       
+      
+        <p class="article-more-link">
+          <a   href="/2020/01/13/hello-world/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1309,7 +940,7 @@ l 【规则5-2-1】在C++ 程序中只使用const常量而不使用宏常量，�
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2020 John Doe
+                &copy; 2020 Ning
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy

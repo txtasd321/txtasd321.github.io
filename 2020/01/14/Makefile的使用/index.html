@@ -9,16 +9,16 @@
   
   <title>Makefile的使用 | Ning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Makefile本文来自转载，仅转载部分基础内容 1.makefile是什么?在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化">
+  <meta name="description" content="Makefile本文来自转载，仅转载部分基础内容 1.makefile是什么?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Makefile的使用">
 <meta property="og:url" content="http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Ning">
-<meta property="og:description" content="Makefile本文来自转载，仅转载部分基础内容 1.makefile是什么?在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化">
+<meta property="og:description" content="Makefile本文来自转载，仅转载部分基础内容 1.makefile是什么?">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-14T01:54:46.000Z">
-<meta property="article:modified_time" content="2020-01-14T14:16:19.103Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2020-01-15T00:39:59.360Z">
+<meta property="article:author" content="Ning">
 <meta property="article:tag" content="Makefile">
 <meta name="twitter:card" content="summary">
   
@@ -72,7 +72,7 @@
             
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/">John Doe</a></h1>
+          <h1 class="header-author"><a href="/">Ning</a></h1>
         </hgroup>
         
         
@@ -188,7 +188,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl github"  target="_blank" href="/txtasd321.github.com" title="github">github</a>
+                                <a class="fl github"  target="_blank" href="/www.txtasd321.github.com" title="github">github</a>
                             
                                 <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
                             
@@ -234,7 +234,7 @@
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">John Doe</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ning</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
@@ -244,7 +244,7 @@
                 
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">John Doe</a></h1>
+              <h1 class="header-author"><a href="/" title="回到主页">Ning</a></h1>
             </hgroup>
             
             <nav class="header-menu">
@@ -266,7 +266,7 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="github" target="_blank" href="/txtasd321.github.com" title="github">github</a>
+                        <a class="github" target="_blank" href="/www.txtasd321.github.com" title="github">github</a>
                     
                         <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
                     
@@ -318,7 +318,8 @@
       
           
         <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p><font size=4 color=red face="仿宋">本文来自转载，仅转载部分基础内容</font></p>
-<h2 id="1-makefile是什么"><a href="#1-makefile是什么" class="headerlink" title="1.makefile是什么?"></a>1.makefile是什么?</h2><p>在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化编译”，一旦写好，只需要一个make命令，整个工程就能自动编译，极大地提高了软件的开发效率，make是一个命令工具，是一个解释makefile中指令的命令工具。</p>
+<h2 id="1-makefile是什么"><a href="#1-makefile是什么" class="headerlink" title="1.makefile是什么?"></a>1.makefile是什么?</h2><a id="more"></a>
+<p>在一个工程中的源文件不计其数，按其类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，也可以执行操作系统的命令。makefile带来的好处就是————“自动化编译”，一旦写好，只需要一个make命令，整个工程就能自动编译，极大地提高了软件的开发效率，make是一个命令工具，是一个解释makefile中指令的命令工具。</p>
 <hr>
 <h2 id="2-程序的编译和连接"><a href="#2-程序的编译和连接" class="headerlink" title="2.程序的编译和连接"></a>2.程序的编译和连接</h2><p>无论是c、c++，首先要把源文件编译成中间代码（汇编语言），在Windows下就是.obj文件，在UNIX下是.o文件，即Object File，这个动作叫做编译。然后把大量的Object File合成可执行文件，这个动作叫作链接(link)。</p>
 <p><font size=4>编译时：</font>编译器需要的是语法的正确，函数与变量的声明。对于后者通常是你需要告诉编译器头文件所在位置（头文件中应该只是声明，二定义应该放在C/C++文件中），只要所有的语法都正确，编译器就可以编译出中间目标文件。一般来讲每个源文件都对应于一个中间目标文件。</p>
@@ -392,12 +393,12 @@ clean :
     
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/">Makefile的使用</a></p>
-        <p><span>文章作者:</span><a  href="/" title="访问 John Doe 的个人博客">John Doe</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Ning 的个人博客">Ning</a></p>
         <p><span>发布时间:</span>2020年01月14日 - 09时54分</p>
-        <p><span>最后更新:</span>2020年01月14日 - 22时16分</p>
+        <p><span>最后更新:</span>2020年01月15日 - 08时39分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Makefile的使用">http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/　　作者: John Doe" title=""></span>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/　　作者: Ning" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -493,8 +494,8 @@ clean :
   <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
   <script type="text/javascript">
     window.changyan.api.config({
-      appid: 'xxxx',
-      conf: 'xxxxxxxxx'
+      appid: 'cyuDxwvnE',
+      conf: 'eb963dc7d63b3a577a9c59767c673a7f'
     });
   </script>
 </section>
@@ -551,7 +552,7 @@ clean :
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2020 John Doe
+                &copy; 2020 Ning
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
