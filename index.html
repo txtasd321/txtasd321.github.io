@@ -198,7 +198,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Makefile/" style="font-size: 10px;">Makefile</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93-%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF-%E5%8A%A8%E6%80%81%E7%94%B3%E8%AF%B7%E5%86%85%E5%AD%98-%E6%88%90%E7%BB%A9%E6%B1%82%E5%92%8C/" style="font-size: 10px;">结构体 学生信息 动态申请内存 成绩求和</a>
+                        <a href="/tags/IO%E8%BF%9B%E7%A8%8B-fopen-fread-fwrite/" style="font-size: 10px;">IO进程 fopen fread fwrite</a> <a href="/tags/Makefile/" style="font-size: 10px;">Makefile</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93-%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF-%E5%8A%A8%E6%80%81%E7%94%B3%E8%AF%B7%E5%86%85%E5%AD%98-%E6%88%90%E7%BB%A9%E6%B1%82%E5%92%8C/" style="font-size: 10px;">结构体 学生信息 动态申请内存 成绩求和</a>
                     </div>
                 </section>
                 
@@ -276,6 +276,165 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-IO进程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/03/04/IO%E8%BF%9B%E7%A8%8B/" class="article-date">
+      <time datetime="2020-03-04T03:34:41.000Z" itemprop="datePublished">2020-03-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/03/04/IO%E8%BF%9B%E7%A8%8B/">IO进程</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="IO–-gt-标准IO-文件IO"><a href="#IO–-gt-标准IO-文件IO" class="headerlink" title="IO–&gt;标准IO 文件IO"></a>IO–&gt;标准IO 文件IO</h2><h4 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h4><ul>
+<li>i–input</li>
+<li>o–output<h4 id="IO对象–-gt-文件"><a href="#IO对象–-gt-文件" class="headerlink" title="IO对象–&gt;文件"></a>IO对象–&gt;文件</h4></li>
+<li>数据–&gt;文件</li>
+<li>文件：保存在硬盘上的一组相关数据的有序集合</li>
+<li>文件名：数据集合的名称</li>
+<li>Linux系统文件类型</li>
+</ul>
+<ol>
+<li>普通文件：<code>-</code></li>
+<li>目录文件：<code>d</code></li>
+<li>字符设备文件：<code>c</code>–<code>/dev</code>——&gt;Linux会将鼠标键盘作为字符设备文件</li>
+<li>块设备文件：<code>b</code>–block——&gt;硬盘、光盘、磁盘–&gt;插入sd卡后在<code>/dev</code>目录中创建了一个块设备文件，然后访问</li>
+<li>链接文件：<code>l</code>–link</li>
+<li>管道文件：<code>p</code>–pipe</li>
+<li>套接字文件：<code>s</code>–socket<h4 id="标准IO库"><a href="#标准IO库" class="headerlink" title="标准IO库"></a>标准IO库</h4></li>
+</ol>
+<ul>
+<li>标准–&gt;C</li>
+<li>标准IO–&gt;在库文件中存放了一组用于对文件的输入和输出操作函数</li>
+<li>标准IO库–&gt;标准C库的一个子集<h4 id="文件指针-FILE"><a href="#文件指针-FILE" class="headerlink" title="文件指针 FILE*"></a>文件指针 <code>FILE*</code></h4></li>
+<li>文件指针：指向一个内存中已打开文件的指针，已经打开的文件在内存中以FILE结构体存在<ul>
+<li><code>FILE *file = fopen(&quot;1.txt&quot;,&quot;r+&quot;);</code></li>
+<li><code>sudo cp -r /usr/include/* /mnt/hgfs</code></li>
+</ul>
+</li>
+<li><code>fork</code>创建一个线程</li>
+<li>信号<h4 id="缓存机制"><a href="#缓存机制" class="headerlink" title="缓存机制"></a>缓存机制</h4></li>
+<li>标准IO库封装了缓存机制</li>
+<li>缓存类型：</li>
+</ul>
+<ol>
+<li>行缓存–&gt;1024byte  </li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello"</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>全缓存–&gt;4096byte当缓存区满的时候就会强制把缓存区的内容刷新到shell终端  </li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello "</span>);</span><br><span class="line">    usleep(<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>不缓存–&gt;stderr(标准错误文件指针,没有缓冲区) <code>FILE*</code></li>
+</ol>
+<h4 id="标准IO函数"><a href="#标准IO函数" class="headerlink" title="标准IO函数"></a>标准IO函数</h4><ul>
+<li><code>fopen</code>打开文件<ul>
+<li><code>r</code>(read):只读</li>
+<li><code>w</code>(write):只写</li>
+<li><code>a</code>(append):追加</li>
+<li><code>t</code>(text):文本文件，可省略</li>
+<li><code>b</code>(binary):二进制文件</li>
+<li><code>+</code>：读和写</li>
+<li></li>
+</ul>
+</li>
+<li><code>fclose</code>关闭文件</li>
+<li><code>fread</code>读文件</li>
+<li><code>fwrite</code>写文件</li>
+<li><code>fgets/gets</code>读取一行</li>
+<li><code>fputs</code>写一行</li>
+<li><code>fseek</code>设置文件指针位置</li>
+<li><code>ftell</code>获取文件指针位置</li>
+<li><code>freopen</code>重定向输入输出流</li>
+<li><code>stdout</code>:标准输出文件指针–&gt;指向标准输出设备</li>
+<li><code>stderr</code>:标准错误文件指针–&gt;指向标准错误设备，没有缓冲区</li>
+<li><code>stdin</code>:标准输出文件指针–&gt;指向标准输入设备</li>
+<li><code>fflush</code>：强制将（一个流）缓冲区内容刷新到shell终端<code>fflush(stdout);</code></li>
+<li><code>setbuf</code>将对应的缓冲设备关掉<code>setbuf(stdout,NULL);</code></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stdout</span>,<span class="string">"hello"</span>);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">"world"</span>);</span><br><span class="line">	<span class="comment">//printf("hello");</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="系统调用（函数）–-gt-操作系统（内核）提供给用户的接口函数"><a href="#系统调用（函数）–-gt-操作系统（内核）提供给用户的接口函数" class="headerlink" title="系统调用（函数）–&gt;操作系统（内核）提供给用户的接口函数"></a>系统调用（函数）–&gt;操作系统（内核）提供给用户的接口函数</h4><h4 id="标准IO函数和文件IO函数的关系"><a href="#标准IO函数和文件IO函数的关系" class="headerlink" title="标准IO函数和文件IO函数的关系"></a>标准IO函数和文件IO函数的关系</h4><ul>
+<li><code>fopen--&gt;open</code></li>
+<li><code>fwrite--&gt;write</code><h4 id="文件描述符，以及它和FILE文件指针的关系"><a href="#文件描述符，以及它和FILE文件指针的关系" class="headerlink" title="文件描述符，以及它和FILE文件指针的关系"></a>文件描述符，以及它和FILE文件指针的关系</h4></li>
+<li>文件描述符：是内核标识一个打开文件的符号，是一个非负整数，遵循最小未分配原则</li>
+<li>0 被stdin占用</li>
+<li>1 被stdout占用</li>
+<li>2 被stderr占用<br><img src="qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim" alt="在/dev中显示"></li>
+</ul>
+<h4 id="文件IO函数–-gt-Linux内核给用户提供的一组对文件的输入输出"><a href="#文件IO函数–-gt-Linux内核给用户提供的一组对文件的输入输出" class="headerlink" title="文件IO函数–&gt;Linux内核给用户提供的一组对文件的输入输出"></a>文件IO函数–&gt;Linux内核给用户提供的一组对文件的输入输出</h4><p><strong>open    打开文件</strong></p>
+<ul>
+<li>参数1：要打开的文件名或带路径的文件名</li>
+<li>参数2：打开方式    O_RDONLY只读    O_WROLNY只写    O_RDWR读写</li>
+<li>参数3：给文件赋予的文件权限（八进制0666），实际该文件的权限是=0666&amp;(~umask)  </li>
+<li>返回值：正确，int数—&gt;文件描述符（3……）    错误：-1.  </li>
+</ul>
+<p><strong>close    关闭打开的文件</strong></p>
+<ul>
+<li>参数1：文件描述符  </li>
+</ul>
+<p><strong>read    读取打开文件的内容</strong></p>
+<ul>
+<li>参数1：文件描述符  </li>
+<li>参数2：本地准备好的存放读到内容的buf</li>
+<li>参数3：期望读取的元素个数</li>
+<li>返回值：&gt;0：成功读到的元素个数。    =0：读到文件末尾。    &lt;0：出错</li>
+</ul>
+<p>write    </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IO%E8%BF%9B%E7%A8%8B-fopen-fread-fwrite/" rel="tag">IO进程 fopen fread fwrite</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Gdb调试器" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -870,69 +1029,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2020/01/13/hello-world/" class="article-date">
-      <time datetime="2020-01-13T01:42:44.727Z" itemprop="datePublished">2020-01-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a   href="/2020/01/13/hello-world/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 </div>
