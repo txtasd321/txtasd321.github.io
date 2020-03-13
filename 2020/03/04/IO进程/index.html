@@ -9,20 +9,20 @@
   
   <title>IO进程 | Ning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IO–&gt;标准IO 文件IOIO i–input o–outputIO对象–&gt;文件 数据–&gt;文件 文件：保存在硬盘上的一组相关数据的有序集合 文件名：数据集合的名称 Linux系统文件类型   普通文件：- 目录文件：d 字符设备文件：c–&#x2F;dev——&gt;Linux会将鼠标键盘作为字符设备文件 块设备文件：b–block——&gt;硬盘、光盘、磁盘–&gt;插入sd卡后在&#x2F;de">
+  <meta name="description" content="IO–&gt;标准IO 文件IOIO i–input  o–output   IO对象–&gt;文件 数据–&gt;文件 文件：保存在硬盘上的一组相关数据的有序集合 文件名：数据集合的名称">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO进程">
 <meta property="og:url" content="http://yoursite.com/2020/03/04/IO%E8%BF%9B%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Ning">
-<meta property="og:description" content="IO–&gt;标准IO 文件IOIO i–input o–outputIO对象–&gt;文件 数据–&gt;文件 文件：保存在硬盘上的一组相关数据的有序集合 文件名：数据集合的名称 Linux系统文件类型   普通文件：- 目录文件：d 字符设备文件：c–&#x2F;dev——&gt;Linux会将鼠标键盘作为字符设备文件 块设备文件：b–block——&gt;硬盘、光盘、磁盘–&gt;插入sd卡后在&#x2F;de">
+<meta property="og:description" content="IO–&gt;标准IO 文件IOIO i–input  o–output   IO对象–&gt;文件 数据–&gt;文件 文件：保存在硬盘上的一组相关数据的有序集合 文件名：数据集合的名称">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/03/04/IO%E8%BF%9B%E7%A8%8B/qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim">
+<meta property="og:image" content="http://qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim">
 <meta property="article:published_time" content="2020-03-04T03:34:41.000Z">
-<meta property="article:modified_time" content="2020-03-04T05:45:56.547Z">
+<meta property="article:modified_time" content="2020-03-13T14:35:45.953Z">
 <meta property="article:author" content="Ning">
 <meta property="article:tag" content="IO进程 fopen fread fwrite">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/04/IO%E8%BF%9B%E7%A8%8B/qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim">
+<meta name="twitter:image" content="http://qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Ning" type="application/atom+xml">
   
@@ -320,11 +320,15 @@
       
           
         <h2 id="IO–-gt-标准IO-文件IO"><a href="#IO–-gt-标准IO-文件IO" class="headerlink" title="IO–&gt;标准IO 文件IO"></a>IO–&gt;标准IO 文件IO</h2><h4 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h4><ul>
-<li>i–input</li>
-<li>o–output<h4 id="IO对象–-gt-文件"><a href="#IO对象–-gt-文件" class="headerlink" title="IO对象–&gt;文件"></a>IO对象–&gt;文件</h4></li>
+<li><p>i–input</p>
+</li>
+<li><p>o–output</p>
+</li>
+</ul>
+<h4 id="IO对象–-gt-文件"><a href="#IO对象–-gt-文件" class="headerlink" title="IO对象–&gt;文件"></a>IO对象–&gt;文件</h4><ul>
 <li>数据–&gt;文件</li>
 <li>文件：保存在硬盘上的一组相关数据的有序集合</li>
-<li>文件名：数据集合的名称</li>
+<li>文件名：数据集合的名称<a id="more"></a></li>
 <li>Linux系统文件类型</li>
 </ul>
 <ol>
@@ -340,7 +344,7 @@
 <li>标准–&gt;C</li>
 <li>标准IO–&gt;在库文件中存放了一组用于对文件的输入和输出操作函数</li>
 <li>标准IO库–&gt;标准C库的一个子集<h4 id="文件指针-FILE"><a href="#文件指针-FILE" class="headerlink" title="文件指针 FILE*"></a>文件指针 <code>FILE*</code></h4></li>
-<li>文件指针：指向一个内存中已打开文件的指针，已经打开的文件在内存中以FILE结构体存在<ul>
+<li>文件指针：指向一个内存中已打开文件的指针，已经打开的文件在内存中以FILE结构体存在。<ul>
 <li><code>FILE *file = fopen(&quot;1.txt&quot;,&quot;r+&quot;);</code></li>
 <li><code>sudo cp -r /usr/include/* /mnt/hgfs</code></li>
 </ul>
@@ -348,45 +352,53 @@
 <li><code>fork</code>创建一个线程</li>
 <li>信号<h4 id="缓存机制"><a href="#缓存机制" class="headerlink" title="缓存机制"></a>缓存机制</h4></li>
 <li>标准IO库封装了缓存机制</li>
+<li>缓存：系统自动在内存中为每一个正在使用的文件开辟一个缓存区，从内存向磁盘输出数据必须先送到内存缓存区，装满缓存区再一起送到磁盘中去。从磁盘中读取数据，则一次从磁盘文件将一批数据读到内存缓存区中，然后从缓存区逐个将数据送到程序的数据区。</li>
 <li>缓存类型：</li>
 </ul>
 <ol>
 <li>行缓存–&gt;1024byte  </li>
 </ol>
+<p>全缓存区：这种缓存方式要求填满整个缓存区后才进行I/O系统调用操作。对于“磁盘文件的操作通常使用全缓冲”的方式访问。第一次执行I/O操作是，ANSI标准的文件管理函数通过调用malloc函数获得需要使用的缓存区，默认的大小为4096byte（）。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello"</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>全缓存–&gt;4096byte当缓存区满的时候就会强制把缓存区的内容刷新到shell终端  </li>
 </ol>
+<p>在行缓冲情况下，当在输入和输出中遇到换行符时，标准I/O库函数将会执行操作系统调用操作。当所操作的流涉及一个终端时（例如标准输入设备和标准输出设备），使用行缓冲方式。因为标准I/O库每行的缓冲区长度是固定的，所以只要填满了缓冲区，即使还没有遇到换行符，也会执行I/O系统调用操作，默认行缓冲区的大小为1024.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello "</span>);</span><br><span class="line">    usleep(<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>不缓存–&gt;stderr(标准错误文件指针,没有缓冲区) <code>FILE*</code></li>
 </ol>
+<p>无缓冲区是标准I/O库不对字符进行缓存，直接调用系统调用。标准出错流stderr通常是不带缓冲区的，这使得出错信息能后尽快地显示出来。</p>
+<p>stderr：标准错误文件指针—–&gt;指向标准错误设备（2）<br>stdin：标准输入文件指针——&gt;指向标准输入设备（0）<br>stdout：标准输出文件指针—-&gt;指向标准输出设备（1）</p>
 <h4 id="标准IO函数"><a href="#标准IO函数" class="headerlink" title="标准IO函数"></a>标准IO函数</h4><ul>
 <li><code>fopen</code>打开文件<ul>
-<li><code>r</code>(read):只读</li>
-<li><code>w</code>(write):只写</li>
-<li><code>a</code>(append):追加</li>
+<li><code>r</code>(read):打开只读文件，该文件必须存在</li>
+<li><code>w</code>(write):打开只写问阿金，若文件存在则文件长度清为0，即该问阿金内容会消失。若文件不存在则建立该文件。</li>
+<li><code>a</code>(append):以追加的方式打开只写文件。若文件不存在，则会建立该文件，即原先的内容会被保留。</li>
+<li><code>a+</code>：以附加的方式打开可读写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾后。即文件原先的内容会被保留。</li>
 <li><code>t</code>(text):文本文件，可省略</li>
 <li><code>b</code>(binary):二进制文件</li>
-<li><code>+</code>：读和写</li>
-<li></li>
+<li><code>r+</code>：打开可读写的文件，该文件必须存在</li>
+<li><code>w+</code>：打开可读写问阿金，若文件存在则文件长度清为零，即该文件内容会、消失。若文件不存在则建立该文件。</li>
 </ul>
 </li>
 <li><code>fclose</code>关闭文件</li>
-<li><code>fread</code>读文件</li>
-<li><code>fwrite</code>写文件</li>
+<li><code>fread</code>读文件<code>size_t fread(void *prt,size_t,size_t nmemb,FILE *stream)</code></li>
+<li><code>fwrite</code>写文件<code>size_t fwrite(const void *ptr,size_t size,size_t nmemb,FILE *stream)</code></li>
 <li><code>fgets/gets</code>读取一行</li>
 <li><code>fputs</code>写一行</li>
-<li><code>fseek</code>设置文件指针位置</li>
-<li><code>ftell</code>获取文件指针位置</li>
-<li><code>freopen</code>重定向输入输出流</li>
+<li><code>fseek</code>设置文件指针位置<code>int fseek(FILE *stream,long offset,int whence)</code></li>
+<li><code>ftell</code>获取文件指针位置<code>long ftell(FILE *stream)</code></li>
+<li><code>freopen</code>重定向输入输出流，即让指向一个文件流的指针指向另一个文件流</li>
 <li><code>stdout</code>:标准输出文件指针–&gt;指向标准输出设备</li>
 <li><code>stderr</code>:标准错误文件指针–&gt;指向标准错误设备，没有缓冲区</li>
 <li><code>stdin</code>:标准输出文件指针–&gt;指向标准输入设备</li>
 <li><code>fflush</code>：强制将（一个流）缓冲区内容刷新到shell终端<code>fflush(stdout);</code></li>
 <li><code>setbuf</code>将对应的缓冲设备关掉<code>setbuf(stdout,NULL);</code></li>
+<li><code>feof</code>判断文件是否到文件末尾，0：未到文件末尾；1：到文件末尾。</li>
+<li><code>ferror</code>：判断对文件的读写是否出错，0：没错；非0：出错。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stdout</span>,<span class="string">"hello"</span>);</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">"world"</span>);</span><br><span class="line">	<span class="comment">//printf("hello");</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -396,14 +408,14 @@
 <li>文件描述符：是内核标识一个打开文件的符号，是一个非负整数，遵循最小未分配原则</li>
 <li>0 被stdin占用</li>
 <li>1 被stdout占用</li>
-<li>2 被stderr占用<br><img src="qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim" alt="在/dev中显示"></li>
+<li>2 被stderr占用<br><img src="http://qn.kuinit.cn/blog/20200304/NkNHBLSVQ3lc.png?imageslim" alt="在/dev中显示"></li>
 </ul>
 <h4 id="文件IO函数–-gt-Linux内核给用户提供的一组对文件的输入输出"><a href="#文件IO函数–-gt-Linux内核给用户提供的一组对文件的输入输出" class="headerlink" title="文件IO函数–&gt;Linux内核给用户提供的一组对文件的输入输出"></a>文件IO函数–&gt;Linux内核给用户提供的一组对文件的输入输出</h4><p><strong>open    打开文件</strong></p>
 <ul>
 <li>参数1：要打开的文件名或带路径的文件名</li>
 <li>参数2：打开方式    O_RDONLY只读    O_WROLNY只写    O_RDWR读写</li>
 <li>参数3：给文件赋予的文件权限（八进制0666），实际该文件的权限是=0666&amp;(~umask)  </li>
-<li>返回值：正确，int数—&gt;文件描述符（3……）    错误：-1.  </li>
+<li>返回值：正确，int数—&gt;文件描述符（从3开始向后）    错误：-1.  </li>
 </ul>
 <p><strong>close    关闭打开的文件</strong></p>
 <ul>
@@ -416,7 +428,101 @@
 <li>参数3：期望读取的元素个数</li>
 <li>返回值：&gt;0：成功读到的元素个数。    =0：读到文件末尾。    &lt;0：出错</li>
 </ul>
-<p>write    </p>
+<p><strong>write    往文件中写入内容</strong></p>
+<ul>
+<li>参数1：文件描述符</li>
+<li>参数2：本地准备好内容（存放在buf中）</li>
+<li>参数3：期望写入的元素个数</li>
+<li>返回值：&gt;0：成功写入文件的字节数        &lt;=0：错误（0：写入内容为0；-1：写入时出错</li>
+</ul>
+<p><strong>lseek：    设置文件指针的位置，不能设置管道S I  ,可以设置：- d c b p l s</strong></p>
+<h4 id="标准IO和文件IO的区别："><a href="#标准IO和文件IO的区别：" class="headerlink" title="标准IO和文件IO的区别："></a>标准IO和文件IO的区别：</h4><table>
+<thead>
+<tr>
+<th>区别</th>
+<th>标准IO</th>
+<th>文件IO</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>函数来源不同</td>
+<td>标准C库</td>
+<td>Linux操作系统（内核）</td>
+</tr>
+<tr>
+<td>是否有缓存</td>
+<td>有缓存</td>
+<td>无缓存</td>
+</tr>
+<tr>
+<td>操作文件的入口</td>
+<td>文件指针(FILE*)</td>
+<td>文件描述符(df)</td>
+</tr>
+</tbody></table>
+<h4 id="标准IO和文件IO的使用场合"><a href="#标准IO和文件IO的使用场合" class="headerlink" title="标准IO和文件IO的使用场合"></a>标准IO和文件IO的使用场合</h4><ul>
+<li>标准IO：写上层应用程序（Linux上层应用）</li>
+<li>文件IO：写内核或驱动程序（Linux底层开发）</li>
+</ul>
+<p>creat()等价于<code>open(pathname,O_CREAT | O_WRONLY | O_TRUBC,mode)</code></p>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><code>opendir</code>：打开一个目录文件</p>
+<ul>
+<li>参数1：目录名</li>
+<li>返回值：目录流指针</li>
+</ul>
+<p><code>readdir</code>：读取已打开目录文件中的目录项</p>
+<ul>
+<li>参数1：目录流指针</li>
+<li>返回值：目录项信息</li>
+<li>struct dirent<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> chr *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//open dir</span></span><br><span class="line">	DIR *dir = opendir(argv[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">if</span>( <span class="literal">NULL</span> == dir)</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"open dir error"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//read dir</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> *<span class="title">ret</span> = <span class="title">NULL</span>;</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">NULL</span> != (ret = readdir(dir)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\r\n"</span>,ret-&gt;d_name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//close dir</span></span><br><span class="line">	closedir(dir);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><code>chdir</code>：改变当前目录  </p>
+<ul>
+<li>参数：目标目录</li>
+<li>返回值：0成功  -1失败</li>
+</ul>
+<p>close()</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ubistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#deinfe LEN 20</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ret = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">char</span> buf[LEN];</span><br><span class="line">	<span class="keyword">if</span>(argc != <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"param error"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!getcwd(buf,LEN))</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"getcwd"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"getcwd is:%s\r\n"</span>,buf);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"chdir ----------\r\n"</span>);</span><br><span class="line">	ret = chdir(argv[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">if</span>(ret)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"errorminput dir path\r\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!getcwd(bun,LEN))</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"getcwd error"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"2:getcwd is:%s\r\n"</span>,buf);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>getcwd</code>：获取当前工作目录</p>
+<h3 id="文件访问权限和属性"><a href="#文件访问权限和属性" class="headerlink" title="文件访问权限和属性"></a>文件访问权限和属性</h3><p><code>chmod</code>：修改文件的访问权限</p>
+<ul>
+<li>参数1：文件名</li>
+<li>参数2：文件权限</li>
+<li>返回值：0 成功    -1 失败</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">const</span> <span class="keyword">char</span>*argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ret = chmod(<span class="string">"1.txt"</span>,<span class="number">0777</span>);</span><br><span class="line">	<span class="keyword">if</span>(ret == <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"chmod is failed"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"test ok\r\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>fchmod</code>：修改文件的访问权限</p>
+<ul>
+<li>参数1：文件描述符</li>
+<li>参数2：</li>
+<li>返回值：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">const</span> <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fd = <span class="built_in">open</span>(<span class="string">"2.txt"</span>,O_RDONLY);</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">-1</span> == fd)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"open file error\r\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"open file ok\r\n"</span>);</span><br><span class="line">	ret = fchmod(fd,<span class="number">0777</span>);</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">-1</span> == ret)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"fchmod ok\r\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="获取文件属性"><a href="#获取文件属性" class="headerlink" title="获取文件属性"></a>获取文件属性</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#incldue <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">inof</span>;</span></span><br><span class="line">    <span class="built_in">memset</span>(&amp;info,<span class="number">0</span>,<span class="keyword">sizeof</span>(struct stat));</span><br><span class="line">    <span class="keyword">int</span> ret = stat(<span class="string">"1.txt"</span>,&amp;info);</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">0</span> == ret)</span><br><span class="line">    &#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\r\n"</span>,info.st_size)&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="函数库及制作"><a href="#函数库及制作" class="headerlink" title="函数库及制作"></a>函数库及制作</h3><p>函数库—&gt;存放了大量的函数的二进制文件(无main)，该文件是别人已经写好的。<br>Linux系统中，有两种函数库：静态库    动态库<br>静态库：.a<br>动态库(共享库)：.so<br>用户使用库的时刻不同：编译时—–&gt;  .a    运行库—–&gt;  .so<br>.c—–&gt;编译——&gt;./a.out——-&gt;运行<br>特点：<br>  静态库：体积变大，移植方便<br>  动态库：体积不会变大，多个应用程序可以使用同一个动态库，移植不方便。<br>使用场合：<br>  应用程序代码量较小，建议使用静态库<br>  应用程序代码量较大，建议视同动态库</p>
+<h4 id="库的制作步骤"><a href="#库的制作步骤" class="headerlink" title="库的制作步骤"></a>库的制作步骤</h4><p>静态库：</p>
+<ol>
+<li>首先写函数库源码func.h  func.c和测试源码main.c</li>
+<li>编译func.c为func.o文件  gcc -c func.c -o func.o</li>
+<li>创建静态库，将很多.o转化成.a   <code>ar crs libmyfunc.a func.o</code></li>
+<li>编译自己的程序使用静态库：<code>gcc -o main main.c -L. -lmyfunc</code></li>
+<li>测试</li>
+</ol>
+<p>动态库：</p>
+<ol>
+<li>首先写函数库源码func,h func.c 和测试代码main.c</li>
+<li>编译func.c为func.o文件   <code>gcc -fPIC -Wall -c func.c</code>    注：-fPIC：创建与地址无关的编译程序      -Wall：生成所有警告信息</li>
+<li>创建动态库 <code>gcc -shared -o libmyfunc.so func.o</code></li>
+<li>将生成的动态库拷贝到/lib目录下    sudo cp libmyfunc.so /lib/</li>
+<li>编译自己的程序使用静态库：gcc -o main -L. -Lmyfunc.so</li>
+<li>测试</li>
+</ol>
 
       
     </div>
@@ -428,7 +534,7 @@
         <p><span>本文标题:</span><a  href="/2020/03/04/IO%E8%BF%9B%E7%A8%8B/">IO进程</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Ning 的个人博客">Ning</a></p>
         <p><span>发布时间:</span>2020年03月04日 - 11时34分</p>
-        <p><span>最后更新:</span>2020年03月04日 - 13时45分</p>
+        <p><span>最后更新:</span>2020年03月13日 - 22时35分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/04/IO%E8%BF%9B%E7%A8%8B/" title="IO进程">http://yoursite.com/2020/03/04/IO%E8%BF%9B%E7%A8%8B/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/03/04/IO%E8%BF%9B%E7%A8%8B/　　作者: Ning" title=""></span>
@@ -441,6 +547,15 @@
 
 
 <nav id="article-nav">
+  
+    <a  href="/2020/03/13/%E8%BF%9B%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          进程
+        
+      </div>
+    </a>
   
   
     <a  href="/2020/01/14/Gdb%E8%B0%83%E8%AF%95%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
@@ -456,7 +571,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IO–-gt-标准IO-文件IO"><span class="toc-number">1.</span> <span class="toc-text">IO–&gt;标准IO 文件IO</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IO"><span class="toc-number">1.0.1.</span> <span class="toc-text">IO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IO对象–-gt-文件"><span class="toc-number">1.0.2.</span> <span class="toc-text">IO对象–&gt;文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO库"><span class="toc-number">1.0.3.</span> <span class="toc-text">标准IO库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件指针-FILE"><span class="toc-number">1.0.4.</span> <span class="toc-text">文件指针 FILE*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存机制"><span class="toc-number">1.0.5.</span> <span class="toc-text">缓存机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO函数"><span class="toc-number">1.0.6.</span> <span class="toc-text">标准IO函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#系统调用（函数）–-gt-操作系统（内核）提供给用户的接口函数"><span class="toc-number">1.0.7.</span> <span class="toc-text">系统调用（函数）–&gt;操作系统（内核）提供给用户的接口函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO函数和文件IO函数的关系"><span class="toc-number">1.0.8.</span> <span class="toc-text">标准IO函数和文件IO函数的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件描述符，以及它和FILE文件指针的关系"><span class="toc-number">1.0.9.</span> <span class="toc-text">文件描述符，以及它和FILE文件指针的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件IO函数–-gt-Linux内核给用户提供的一组对文件的输入输出"><span class="toc-number">1.0.10.</span> <span class="toc-text">文件IO函数–&gt;Linux内核给用户提供的一组对文件的输入输出</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IO–-gt-标准IO-文件IO"><span class="toc-number">1.</span> <span class="toc-text">IO–&gt;标准IO 文件IO</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IO"><span class="toc-number">1.0.1.</span> <span class="toc-text">IO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IO对象–-gt-文件"><span class="toc-number">1.0.2.</span> <span class="toc-text">IO对象–&gt;文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO库"><span class="toc-number">1.0.3.</span> <span class="toc-text">标准IO库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件指针-FILE"><span class="toc-number">1.0.4.</span> <span class="toc-text">文件指针 FILE*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存机制"><span class="toc-number">1.0.5.</span> <span class="toc-text">缓存机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO函数"><span class="toc-number">1.0.6.</span> <span class="toc-text">标准IO函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#系统调用（函数）–-gt-操作系统（内核）提供给用户的接口函数"><span class="toc-number">1.0.7.</span> <span class="toc-text">系统调用（函数）–&gt;操作系统（内核）提供给用户的接口函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO函数和文件IO函数的关系"><span class="toc-number">1.0.8.</span> <span class="toc-text">标准IO函数和文件IO函数的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件描述符，以及它和FILE文件指针的关系"><span class="toc-number">1.0.9.</span> <span class="toc-text">文件描述符，以及它和FILE文件指针的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件IO函数–-gt-Linux内核给用户提供的一组对文件的输入输出"><span class="toc-number">1.0.10.</span> <span class="toc-text">文件IO函数–&gt;Linux内核给用户提供的一组对文件的输入输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO和文件IO的区别："><span class="toc-number">1.0.11.</span> <span class="toc-text">标准IO和文件IO的区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标准IO和文件IO的使用场合"><span class="toc-number">1.0.12.</span> <span class="toc-text">标准IO和文件IO的使用场合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目录"><span class="toc-number">1.0.13.</span> <span class="toc-text">目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件访问权限和属性"><span class="toc-number">1.1.</span> <span class="toc-text">文件访问权限和属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#获取文件属性"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">获取文件属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数库及制作"><span class="toc-number">1.2.</span> <span class="toc-text">函数库及制作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#库的制作步骤"><span class="toc-number">1.2.1.</span> <span class="toc-text">库的制作步骤</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -529,7 +644,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2020/03/13/%E8%BF%9B%E7%A8%8B/" title="上一篇: 进程">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -538,7 +655,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/04/IO%E8%BF%9B%E7%A8%8B/">IO进程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/14/Gdb%E8%B0%83%E8%AF%95%E5%99%A8/">Gdb调试器</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/">Makefile的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/14/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF/">结构体学生信息</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/">动态内存</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/linux_shell_%E8%84%9A%E6%9C%AC%E6%B5%81%E7%A8%8B/">linux_shell_脚本流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/Linux_bash/">Linux_bash</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E6%8C%87%E9%92%88/">指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B/">结构体类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">进程间通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BA%94%E7%94%A8/">守护进程与多线程的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/%E8%BF%9B%E7%A8%8B/">进程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/04/IO%E8%BF%9B%E7%A8%8B/">IO进程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/14/Gdb%E8%B0%83%E8%AF%95%E5%99%A8/">Gdb调试器</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/14/Makefile%E7%9A%84%E4%BD%BF%E7%94%A8/">Makefile的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/14/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF/">结构体学生信息</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/">动态内存</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/linux_shell_%E8%84%9A%E6%9C%AC%E6%B5%81%E7%A8%8B/">linux_shell_脚本流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/Linux_bash/">Linux_bash</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E6%8C%87%E9%92%88/">指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B/">结构体类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/hello-world/">Hello World</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
